@@ -1,0 +1,29 @@
+Command line:
+   fuller_adder_sch_fuller_adder_sch_sch_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  58241
+
+Mon Jan 15 15:54:50 2018
+
+
+ Elaboration Time: 0.09 sec
+
+ Current Memory Usage: 200.421 Meg
+
+ Total Signals          : 43
+ Total Nets             : 22
+ Total Signal Drivers   : 14
+ Total Blocks           : 9
+ Total Primitive Blocks : 7
+ Total Processes        : 17
+ Total Traceable Variables  : 21
+ Total Scalar Nets and Variables : 105
+Total Line Count : 28
+
+ Total Simulation Time: 0.12 sec
+
+ Current Memory Usage: 275.923 Meg
+
+Mon Jan 15 15:55:48 2018
+

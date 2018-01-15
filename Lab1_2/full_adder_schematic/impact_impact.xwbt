@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/tmp/guest-lClJd0/Desktop/CS220labs/Lab1_2/full_adder_schematic/impact.xsl
+OUTFILE=/tmp/guest-lClJd0/Desktop/CS220labs/Lab1_2/full_adder_schematic/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/tmp/guest-lClJd0/Desktop/CS220labs/Lab1_2/full_adder_schematic
+LICENSE=iMPACT
+USER_INFO=iMPACT

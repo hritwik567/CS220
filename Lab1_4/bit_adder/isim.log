@@ -1,0 +1,31 @@
+ISim log file
+Running: /tmp/guest-lClJd0/Desktop/CS220labs/Lab1_4/bit_adder/bit_adder_top_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /tmp/guest-lClJd0/Desktop/CS220labs/Lab1_4/bit_adder/bit_adder_top_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+time=                   0: 00 + 00 = 00, cout= 0
+
+Finished circuit initialization process.
+time=                   5: 01 + 00 = 01, cout= 0
+
+time=                  10: 01 + 01 = 00, cout= 0
+
+time=                  10: 01 + 01 = 10, cout= 0
+
+time=                  15: 10 + 10 = 00, cout= 1
+
+time=                  20: 10 + 00 = 10, cout= 0
+
+time=                  25: 10 + 01 = 11, cout= 0
+
+time=                  30: 11 + 11 = 10, cout= 1
+
+Stopped at time : 35 ns : File "/tmp/guest-lClJd0/Desktop/CS220labs/Lab1_4/bit_adder/bit_adder_top.v" Line 61
+# exit 0
