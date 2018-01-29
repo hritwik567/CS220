@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/cse/Desktop/CS220/Lab2/Lab2_2/seven_bit_comp/seven_bit_top_isim_beh.exe" -prj "/home/cse/Desktop/CS220/Lab2/Lab2_2/seven_bit_comp/seven_bit_top_beh.prj" "work.seven_bit_top" "work.glbl" 

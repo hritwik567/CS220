@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/cse/Desktop/CS220/Lab1/Lab1_4/bit_adder/impact.xsl
+OUTFILE=/home/cse/Desktop/CS220/Lab1/Lab1_4/bit_adder/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/home/cse/Desktop/CS220/Lab1/Lab1_4/bit_adder
+LICENSE=iMPACT
+USER_INFO=iMPACT

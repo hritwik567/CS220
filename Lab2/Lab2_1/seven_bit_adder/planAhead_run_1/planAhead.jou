@@ -1,0 +1,72 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon Jan 29 15:24:15 2018
+# Process ID: 5091
+# Log file: /home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/planAhead_run_1/planAhead.log
+# Journal file: /home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin E9 [get_ports {sum[6]}]
+endgroup
+startgroup
+set_property package_pin D11 [get_ports {sum[5]}]
+endgroup
+startgroup
+set_property package_pin C11 [get_ports {sum[4]}]
+endgroup
+startgroup
+set_property package_pin F11 [get_ports {sum[3]}]
+endgroup
+startgroup
+set_property package_pin E11 [get_ports {sum[2]}]
+endgroup
+startgroup
+set_property package_pin E12 [get_ports {sum[1]}]
+endgroup
+startgroup
+set_property package_pin F12 [get_ports {sum[0]}]
+endgroup
+startgroup
+set_property package_pin N17 [get_ports {y[3]}]
+endgroup
+set_property package_pin "" [get_ports [list  {y[1]}]]
+startgroup
+set_property package_pin H18 [get_ports {y[2]}]
+endgroup
+startgroup
+set_property package_pin L14 [get_ports {y[1]}]
+endgroup
+startgroup
+set_property package_pin L13 [get_ports {y[0]}]
+endgroup
+startgroup
+set_property package_pin F9 [get_ports cout]
+endgroup
+startgroup
+set_property package_pin D18 [get_ports pb1]
+endgroup
+startgroup
+set_property package_pin V4 [get_ports pb2]
+endgroup
+set_property package_pin "" [get_ports [list  pb3]]
+set_property package_pin "" [get_ports [list  pb4]]
+startgroup
+set_property package_pin H13 [get_ports pb3]
+endgroup
+startgroup
+set_property package_pin K17 [get_ports pb4]
+endgroup
+save_constraints
+set_property iostandard LVTTL [get_ports [list pb1]]
+set_property iostandard LVTTL [get_ports [list pb2]]
+set_property iostandard LVTTL [get_ports [list pb3]]
+set_property iostandard LVTTL [get_ports [list pb4]]
+set_property pulltype PULLDOWN [get_ports [list pb1]]
+set_property pulltype PULLDOWN [get_ports [list pb2]]
+set_property pulltype PULLDOWN [get_ports [list pb3]]
+set_property pulltype PULLDOWN [get_ports [list pb4]]
+save_constraints

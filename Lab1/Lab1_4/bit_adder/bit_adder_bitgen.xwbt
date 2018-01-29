@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/cse/Desktop/CS220/Lab1/Lab1_4/bit_adder/bit_adder.ncd
+OUTFILE=/home/cse/Desktop/CS220/Lab1/Lab1_4/bit_adder/bit_adder.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/home/cse/Desktop/CS220/Lab1/Lab1_4/bit_adder
+LICENSE=WebPack
+USER_INFO=211293859_0_0_010

@@ -1,0 +1,24 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o /home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/seven_bit_adder_top_isim_beh.exe -prj /home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/seven_bit_adder_top_beh.prj work.seven_bit_adder_top work.glbl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/full_adder.v" into library work
+Analyzing Verilog file "/home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/seven_bit_adder.v" into library work
+Analyzing Verilog file "/home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/seven_bit_adder_top.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:189 - "/home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/seven_bit_adder_top.v" Line 42: Size mismatch in connection of port <cout>. Formal port size is 1-bit while actual signal size is 7-bit.
+Completed static elaboration
+Fuse Memory Usage: 98808 KB
+Fuse CPU Usage: 2540 ms
+Compiling module full_adder
+Compiling module seven_bit_adder
+Compiling module seven_bit_adder_top
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Compiled 4 Verilog Units
+Built simulation executable /home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/seven_bit_adder_top_isim_beh.exe
+Fuse Memory Usage: 659056 KB
+Fuse CPU Usage: 2620 ms
+GCC CPU Usage: 2160 ms

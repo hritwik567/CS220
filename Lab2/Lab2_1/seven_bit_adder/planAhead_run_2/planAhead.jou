@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon Jan 29 15:33:48 2018
+# Process ID: 5403
+# Log file: /home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/planAhead_run_2/planAhead.log
+# Journal file: /home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/cse/Desktop/CS220/Lab2/Lab2_1/seven_bit_adder/pa.fromNetlist.tcl
