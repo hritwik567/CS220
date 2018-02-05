@@ -27,11 +27,11 @@ module adder5x4_top;
 	// Inputs
 	reg [3:0]y;
 	reg pb1,pb2,pb3,pb4,rot;
-	wire [7:0]sum;
+	wire [6:0]sum;
 
 	// Instantiate the Unit Under Test (UUT)
 	adder5x4 uut (
-		.y(y),
+		.yi(y),
 		.pb1(pb1),
 		.pb2(pb2),
 		.pb3(pb3),
@@ -50,6 +50,16 @@ module adder5x4_top;
 		y=4'b1111;pb1=1;pb2=0;pb3=0;pb4=0;rot=0;
 		#5
 		y=4'b1111;pb1=0;pb2=0;pb3=0;pb4=0;rot=0;
+		#5
+		y=4'b1111;pb1=0;pb2=1;pb3=0;pb4=0;rot=0;
+		#5
+		y=4'b1111;pb1=0;pb2=0;pb3=0;pb4=0;rot=0;
+		#5
+		y=4'b1111;pb1=0;pb2=1;pb3=1;pb4=0;rot=0;
+		#5
+		y=4'b1111;pb1=1;pb2=0;pb3=0;pb4=0;rot=0;
+		#5
+		y=4'b1111;pb1=0;pb2=0;pb3=0;pb4=1;rot=0;
 		#5
 		y=4'b1111;pb1=0;pb2=1;pb3=0;pb4=0;rot=0;
 		#5
