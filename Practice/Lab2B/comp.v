@@ -19,47 +19,16 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module comp(a,b,p1,p2,p3,l1,l2,l3);
-input a;
-input b;
+input a, b;
 
-input p1;
-input p2;
-input p3;
+input p1, p2, p3;
 
-output l1;
-output l2;
-output l3;
+output l1, l2, l3;
 
-reg l1;
-reg l2;
-reg l3;
+wire l1, l2, l3;
 
-always @(a or b or p1 or p2 or p3) begin
-  if(p1==1'b1) begin
-    l1=1'b1;
-    l2=1'b0;
-    l3=1'b0;
-  end
-  else if(p2==1'b1) begin
-    l1=1'b0;
-    l2=1'b1;
-    l3=1'b0;
-  end
-  else if(a<b) begin
-    l1=1'b1;
-    l2=1'b0;
-    l3=1'b0;
-  end
-  else if(b<a) begin
-    l1=1'b0;
-    l2=1'b1;
-    l3=1'b0;
-  end
-  else begin
-    l1=1'b0;
-    l2=1'b0;
-    l3=1'b1;
-  end
-end
+assign l1 = p1|((~a)&b);  //true if a<b or previous is true
+assign l2 = p2|(a&(~b));  //true if a>b or previous is true 
+assign l3 = (a&b)|((~a)&(~b));   //true if a=b
 
 endmodule
