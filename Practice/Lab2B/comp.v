@@ -27,8 +27,8 @@ output l1, l2, l3;
 
 wire l1, l2, l3;
 
-assign l1 = p1|((~a)&b);  //true if a<b or previous is true
-assign l2 = p2|(a&(~b));  //true if a>b or previous is true 
-assign l3 = (a&b)|((~a)&(~b));   //true if a=b
+assign l1 = (~p2)&(p1|((~a)&b));  //true if a<b or previous is true
+assign l2 = (~p1)&(p2|(a&(~b)));  //true if a>b or previous is true 
+assign l3 = (~p1)&(~p2)&((a&b)|((~a)&(~b)));   //true if a=b
 
 endmodule

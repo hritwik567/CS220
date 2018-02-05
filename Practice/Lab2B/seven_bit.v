@@ -34,16 +34,16 @@ module seven_bit(y,pb1,pb2,pb3,pb4,l0,l1,l2);
 	
 
 
-	always @(negedge pb1) begin
+	always @(posedge pb1) begin
 	  a[3:0] <= y;
 	end
-	always @(negedge pb2) begin
+	always @(posedge pb2) begin
 	  a[7:4] <= y;
 	end
-	always @(negedge pb3) begin
+	always @(posedge pb3) begin
 	  b[3:0] <= y;
 	end
-	always @(negedge pb4) begin
+	always @(posedge pb4) begin
 	  b[7:4] <= y;
 	end
 	
@@ -54,10 +54,10 @@ module seven_bit(y,pb1,pb2,pb3,pb4,l0,l1,l2);
 	comp cm4 (a[3],b[3],p0[4],p1[4],p2[4],p0[3],p1[3],p2[3]);
 	comp cm3 (a[2],b[2],p0[3],p1[3],p2[3],p0[2],p1[2],p2[2]);
 	comp cm2 (a[1],b[1],p0[2],p1[2],p2[2],p0[1],p1[1],p2[1]);
-	comp cm1 (a[0],b[0],p0[1],p1[1],p2[1],p0[0],p1[0],p2[0]);
+	comp cm1 (a[0],b[0],p0[1],p1[1],p2[1],l0,l1,l2);//p0[0],p1[0],p2[0]);
 
-	assign l0 = p0[0];
-	assign l1 = p1[0];
- 	assign l2 = p2[0];
+	//assign l0 = p0[0];
+	//assign l1 = p1[0];
+ 	//assign l2 = p2[0];
 
 endmodule

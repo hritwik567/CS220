@@ -37,6 +37,8 @@ end
 
 initial begin
 	#5
+	y=4'b0001;pb1=0;pb2=0;pb3=0;pb4=0;
+	#5
 	y=4'b0001;pb1=1;pb2=0;pb3=0;pb4=0;
 	#5
 	y=4'b0001;pb1=0;pb2=0;pb3=0;pb4=0;
