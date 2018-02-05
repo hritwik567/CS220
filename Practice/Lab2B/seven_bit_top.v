@@ -24,22 +24,16 @@
 
 module seven_bit_top;
 reg [3:0]y;
-reg pb1;
-reg pb2;
-reg pb3;
-reg pb4;
-reg l0;
-reg l1;
-reg l2;
+reg pb1, pb2, pb3, pb4;
+wire l0, l1, l2;
 
 seven_bit uut (y,pb1,pb2,pb3,pb4,l0,l1,l2);
 
 
 always @(pb1 or pb2 or pb3 or pb4)
 begin
-	$display("time=%d: y = %b, led0 = %b, led1 = %b, led2 =%b, pb1=%b,pb2=%b,pb3=%b,pb4=%b\n",$time,y,l0,l1,l2,pb1,pb2,pb3,pb4);
+	$display("time = %d: y = %b, led0 = %b, led1 = %b, led2 =%b, pb1=%b,pb2=%b,pb3=%b,pb4=%b\n",$time,y,l0,l1,l2,pb1,pb2,pb3,pb4);
 end
-
 
 initial begin
 	#5
@@ -63,4 +57,3 @@ initial begin
 end
 
 endmodule
-

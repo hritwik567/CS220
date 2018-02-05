@@ -20,27 +20,30 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module seven_bit(y,pb1,pb2,pb3,pb4,l0,l1,l2);
-	input [3:0]y;
+	input [3:0] y;
+	
 	input pb1, pb2, pb3, pb4;
 	
+	wire [7:0] p0, p1, p2;
+
 	output l0, l1, l2;
 
 	reg [7:0] a ,b;
 	
-	reg l0, l1, l2;
+	wire l0, l1, l2;
 	
-	reg [7:0]p0, p1, p2;
 
-	always @(posedge pb1) begin
+
+	always @(negedge pb1) begin
 	  a[3:0] <= y;
 	end
-	always @(posedge pb2) begin
+	always @(negedge pb2) begin
 	  a[7:4] <= y;
 	end
-	always @(posedge pb3) begin
+	always @(negedge pb3) begin
 	  b[3:0] <= y;
 	end
-	always @(posedge pb4) begin
+	always @(negedge pb4) begin
 	  b[7:4] <= y;
 	end
 	
@@ -53,10 +56,8 @@ module seven_bit(y,pb1,pb2,pb3,pb4,l0,l1,l2);
 	comp cm2 (a[1],b[1],p0[2],p1[2],p2[2],p0[1],p1[1],p2[1]);
 	comp cm1 (a[0],b[0],p0[1],p1[1],p2[1],p0[0],p1[0],p2[0]);
 
-	always @(p0[0] or p1[0] or p2[0]) begin	
-	  l0 = p0[0];
-	  l1 = p1[0];
- 	  l2 = p2[0];
- 	end	  
+	assign l0 = p0[0];
+	assign l1 = p1[0];
+ 	assign l2 = p2[0];
 
 endmodule
