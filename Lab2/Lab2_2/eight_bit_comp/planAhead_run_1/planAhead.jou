@@ -1,0 +1,60 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon Feb  5 14:29:34 2018
+# Process ID: 20585
+# Log file: /users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_2/eight_bit_comp/planAhead_run_1/planAhead.log
+# Journal file: /users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_2/eight_bit_comp/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_2/eight_bit_comp/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin D18 [get_ports pb1]
+endgroup
+startgroup
+set_property package_pin V4 [get_ports pb2]
+endgroup
+set_property is_loc_fixed false [get_ports [list  pb2]]
+set_property is_loc_fixed true [get_ports [list  pb2]]
+set_property is_loc_fixed false [get_ports [list  pb2]]
+set_property is_loc_fixed true [get_ports [list  pb2]]
+startgroup
+set_property package_pin H13 [get_ports pb3]
+endgroup
+startgroup
+set_property package_pin K17 [get_ports pb4]
+endgroup
+set_property iostandard LVTTL [get_ports [list pb1]]
+set_property iostandard LVTTL [get_ports [list pb2]]
+set_property iostandard LVTTL [get_ports [list pb3]]
+set_property iostandard LVTTL [get_ports [list pb4]]
+set_property pulltype PULLDOWN [get_ports [list pb1]]
+set_property pulltype PULLDOWN [get_ports [list pb2]]
+set_property pulltype PULLDOWN [get_ports [list pb3]]
+set_property pulltype PULLDOWN [get_ports [list pb4]]
+startgroup
+set_property package_pin N17 [get_ports {y[3]}]
+endgroup
+startgroup
+set_property package_pin H18 [get_ports {y[2]}]
+endgroup
+set_property package_pin "" [get_ports [list  {y[0]}]]
+startgroup
+set_property package_pin L14 [get_ports {y[1]}]
+endgroup
+startgroup
+set_property package_pin L13 [get_ports {y[0]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {y[0]}]]
+set_property is_loc_fixed true [get_ports [list  {y[0]}]]
+startgroup
+set_property package_pin F12 [get_ports l0]
+endgroup
+startgroup
+set_property package_pin E12 [get_ports l1]
+endgroup
+startgroup
+set_property package_pin E11 [get_ports l2]
+endgroup
+save_constraints

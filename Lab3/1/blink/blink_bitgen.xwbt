@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/users/btech/hritvikt/Desktop/CS220/Lab3/1/blink/blink.ncd
+OUTFILE=/users/btech/hritvikt/Desktop/CS220/Lab3/1/blink/blink.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/users/btech/hritvikt/Desktop/CS220/Lab3/1/blink
+LICENSE=WebPack
+USER_INFO=211450758_0_0_676

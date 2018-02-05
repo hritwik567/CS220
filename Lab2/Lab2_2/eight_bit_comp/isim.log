@@ -1,0 +1,33 @@
+ISim log file
+Running: /users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_2/eight_bit_comp/eight_bit_comp_top_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_2/eight_bit_comp/eight_bit_comp_top_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+time =                    5: y = 0001, led0 = x, led1 = x, led2 =x, pb1=0,pb2=0,pb3=0,pb4=0
+
+time =                   10: y = 0001, led0 = x, led1 = x, led2 =x, pb1=1,pb2=0,pb3=0,pb4=0
+
+time =                   15: y = 0000, led0 = x, led1 = x, led2 =x, pb1=0,pb2=0,pb3=0,pb4=0
+
+time =                   20: y = 0000, led0 = x, led1 = x, led2 =x, pb1=0,pb2=1,pb3=0,pb4=0
+
+time =                   25: y = 0000, led0 = x, led1 = x, led2 =x, pb1=0,pb2=0,pb3=0,pb4=0
+
+time =                   30: y = 0000, led0 = x, led1 = x, led2 =x, pb1=0,pb2=0,pb3=1,pb4=0
+
+time =                   35: y = 0000, led0 = x, led1 = x, led2 =0, pb1=0,pb2=0,pb3=0,pb4=0
+
+time =                   40: y = 0001, led0 = x, led1 = x, led2 =0, pb1=0,pb2=0,pb3=0,pb4=1
+
+time =                   45: y = 0001, led0 = 1, led1 = 0, led2 =0, pb1=0,pb2=0,pb3=0,pb4=0
+
+Stopped at time : 50 ns : File "/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_2/eight_bit_comp/eight_bit_comp_top.v" Line 76
+# exit 0

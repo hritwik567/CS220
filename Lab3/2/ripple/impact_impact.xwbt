@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/users/btech/hritvikt/Desktop/CS220/Lab3/2/ripple/impact.xsl
+OUTFILE=/users/btech/hritvikt/Desktop/CS220/Lab3/2/ripple/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/users/btech/hritvikt/Desktop/CS220/Lab3/2/ripple
+LICENSE=iMPACT
+USER_INFO=iMPACT

@@ -1,5 +1,24 @@
 `timescale 1ns / 1ps
 `define SHIFT_TIME 50000000
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    15:41:21 02/05/2018 
+// Design Name: 
+// Module Name:    ripple 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 
 module ripple(clk, led0, led1, led2, led3, led4, led5, led6, led7);
 
@@ -28,3 +47,4 @@ always @(posedge clk) begin
 end
 
 endmodule
+

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Bus Id="y">
+			<Port Id="3" Dir="IN"/>
+			<Port Id="2" Dir="IN"/>
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Port Id="pb1" Dir="IN"/>
+		<Port Id="pb2" Dir="IN"/>
+		<Port Id="pb3" Dir="IN"/>
+		<Port Id="pb4" Dir="IN"/>
+		<Port Id="l0" Dir="OUT"/>
+		<Port Id="l1" Dir="OUT"/>
+		<Port Id="l2" Dir="OUT"/>
+	</Ifc>
+</Interface>
+

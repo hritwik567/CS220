@@ -1,0 +1,5 @@
+verilog work "full_adder.v"
+verilog work "adder6.v"
+verilog work "adder5.v"
+verilog work "adder4.v"
+verilog work "adder5x4.v"

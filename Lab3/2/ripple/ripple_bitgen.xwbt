@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/users/btech/hritvikt/Desktop/CS220/Lab3/2/ripple/ripple.ncd
+OUTFILE=/users/btech/hritvikt/Desktop/CS220/Lab3/2/ripple/ripple.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/users/btech/hritvikt/Desktop/CS220/Lab3/2/ripple
+LICENSE=WebPack
+USER_INFO=211450758_0_0_676

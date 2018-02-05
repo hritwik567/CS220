@@ -1,0 +1,11 @@
+
+
+NET "led" LOC = F12;
+NET "clk" LOC = C9;
+
+# PlanAhead Generated IO constraints 
+
+NET "clk" IOSTANDARD = LVTTL;
+NET "led" IOSTANDARD = LVTTL;
+NET "clk" PULLDOWN;
+NET "clk" PERIOD = 20.0ns HIGH 50%;

@@ -1,0 +1,14 @@
+xst -intstyle ise -ifn "/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4/adder5x4.xst" -ofn "/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4/adder5x4.syr" 
+xst -intstyle ise -ifn "/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4/adder5x4.xst" -ofn "/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4/adder5x4.syr" 
+xst -intstyle ise -ifn "/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4/adder5x4.xst" -ofn "/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4/adder5x4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc adder5x4.ucf -p xc3s500e-fg320-4 adder5x4.ngc adder5x4.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o adder5x4_map.ncd adder5x4.ngd adder5x4.pcf 
+par -w -intstyle ise -ol high -t 1 adder5x4_map.ncd adder5x4.ncd adder5x4.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml adder5x4.twx adder5x4.ncd -o adder5x4.twr adder5x4.pcf -ucf adder5x4.ucf 
+bitgen -intstyle ise -f adder5x4.ut adder5x4.ncd 
+xst -intstyle ise -ifn "/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4/adder5x4.xst" -ofn "/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4/adder5x4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc adder5x4.ucf -p xc3s500e-fg320-4 adder5x4.ngc adder5x4.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o adder5x4_map.ncd adder5x4.ngd adder5x4.pcf 
+par -w -intstyle ise -ol high -t 1 adder5x4_map.ncd adder5x4.ncd adder5x4.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml adder5x4.twx adder5x4.ncd -o adder5x4.twr adder5x4.pcf -ucf adder5x4.ucf 
+bitgen -intstyle ise -f adder5x4.ut adder5x4.ncd 

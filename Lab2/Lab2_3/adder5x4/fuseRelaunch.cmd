@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4/adder5x4_top_isim_beh.exe" -prj "/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4/adder5x4_top_beh.prj" "work.adder5x4_top" "work.glbl" 
