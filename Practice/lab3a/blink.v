@@ -22,7 +22,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 module blink(clk,led);
 input clk;
-output reg led;
+output led;
+reg led;
 reg [26:0]cnt=27'b0;
 
 always @(posedge clk) begin

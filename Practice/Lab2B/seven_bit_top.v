@@ -1,25 +1,25 @@
 `timescale 1ns / 1ps
 `include "seven_bit.v"
 ////////////////////////////////////////////////////////////////////////////////
-// Company: 
+// Company:
 // Engineer:
 //
 // Create Date:   16:46:24 01/29/2018
 // Design Name:   seven_bit
 // Module Name:   /home/cse/Desktop/CS220/Lab2/Lab2_2/seven_bit_comp/seven_bit_top.v
 // Project Name:  seven_bit_comp
-// Target Device:  
-// Tool versions:  
-// Description: 
+// Target Device:
+// Tool versions:
+// Description:
 //
 // Verilog Test Fixture created by ISE for module: seven_bit
 //
 // Dependencies:
-// 
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 ////////////////////////////////////////////////////////////////////////////////
 
 module seven_bit_top;

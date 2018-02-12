@@ -14,9 +14,6 @@ reg [25:0] counter = 26'b0;
 
 always @(posedge clk) begin
 	counter <= counter + 1;
-end
-
-always @(posedge counter) begin
 	if (counter == `SHIFT_TIME) begin
 		led1 <= led0;
 		led2 <= led1;
