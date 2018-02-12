@@ -1,25 +1,21 @@
+`include "adder5.v"
+module move(cor,step,dir,out);
 
+input [3:0]cor;
+input [1:0]step; 
+input dir;
 
+output [3:0]out;
+wire [3:0]out;
 
-module move(y,clk,rot,dir,sum);
+wire [3:0]oa;
+wire last;
 
-input [3:0]y;
-input clk,rot,dir;
+adder5 uut (cor,step,dir,oa,last);
 
-output [7:0]sum;
-wire [7:0]sum;
-wire [6:0]carry;
+assign out[0] = (oa[0]&(~last))|((~op)&last); 
+assign out[1] = (oa[1]&(~last))|((~op)&last); 
+assign out[2] = (oa[2]&(~last))|((~op)&last); 
+assign out[3] = (oa[3]&(~last))|((~op)&last);
 
-reg prev=1'b1,op;
-reg [2:0]cnt=3'b0;
-reg [6:0]a,b;
-
-
-
-
-always @(posedge clk) begin
-	if(rot==1) begin
-		
-	end
-end
-
+endmodule
