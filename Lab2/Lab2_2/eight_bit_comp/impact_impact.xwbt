@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_2/eight_bit_comp/impact.xsl
+OUTFILE=/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_2/eight_bit_comp/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_2/eight_bit_comp
+LICENSE=iMPACT
+USER_INFO=iMPACT

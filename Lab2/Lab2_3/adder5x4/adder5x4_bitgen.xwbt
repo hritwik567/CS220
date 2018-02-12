@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4/adder5x4.ncd
+OUTFILE=/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4/adder5x4.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/users/btech/hritvikt/Desktop/CS220/Lab2/Lab2_3/adder5x4
+LICENSE=WebPack
+USER_INFO=211450758_0_0_676
