@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-`include "full_adder.v"
+`include "complement_adder.v"
 
 module adder7(y,clk,rot,dir,sum);
 
@@ -34,11 +34,11 @@ always @(posedge clk) begin
 	end
 end
 
-full_adder uut1 (a[0],b[0],op,sum[0],carry[0]);
-full_adder uut2 (a[1],b[1],carry[0],sum[1],carry[1]);
-full_adder uut3 (a[2],b[2],carry[1],sum[2],carry[2]);
-full_adder uut4 (a[3],b[3],carry[2],sum[3],carry[3]);
-full_adder uut5 (a[4],b[4],carry[3],sum[4],carry[4]);
-full_adder uut6 (a[5],b[5],carry[4],sum[5],carry[5]);
-full_adder uut7 (a[6],b[6],carry[5],sum[6],sum[7]);
+complement_adder uut1 (a[0],b[0],op,op,sum[0],carry[0]);
+complement_adder uut2 (a[1],b[1],carry[0],op,sum[1],carry[1]);
+complement_adder uut3 (a[2],b[2],carry[1],op,sum[2],carry[2]);
+complement_adder uut4 (a[3],b[3],carry[2],op,sum[3],carry[3]);
+complement_adder uut5 (a[4],b[4],carry[3],op,sum[4],carry[4]);
+complement_adder uut6 (a[5],b[5],carry[4],op,sum[5],carry[5]);
+complement_adder uut7 (a[6],b[6],carry[5],op,sum[6],sum[7]);
 endmodule

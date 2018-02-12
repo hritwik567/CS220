@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module full_adder(a,b,c,op,sum,carry);
+module complement_adder(a,b,c,op,sum,carry);
 input a,b,c,op;
 output sum, carry;
 
