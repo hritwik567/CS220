@@ -8,7 +8,7 @@ input clk,rot,dir;
 
 output [7:0]sum;
 wire [7:0]sum;
-wire [5:0]carry;
+wire [6:0]carry;
 
 reg prev=1'b1,op;
 reg [2:0]cnt=3'b0;
@@ -40,5 +40,7 @@ complement_adder uut3 (a[2],b[2],carry[1],op,sum[2],carry[2]);
 complement_adder uut4 (a[3],b[3],carry[2],op,sum[3],carry[3]);
 complement_adder uut5 (a[4],b[4],carry[3],op,sum[4],carry[4]);
 complement_adder uut6 (a[5],b[5],carry[4],op,sum[5],carry[5]);
-complement_adder uut7 (a[6],b[6],carry[5],op,sum[6],sum[7]);
+complement_adder uut7 (a[6],b[6],carry[5],op,sum[6],carry[6]);
+assign sum[7]=!(carry[5]^carry[6]);
+
 endmodule
