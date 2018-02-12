@@ -1,8 +1,9 @@
 `timescale 1ns / 1ps
 
-module encoder(clk,rota,rotb);
+module encoder(clk,rota,rotb,rot,dir);
 
 input clk,rota,rotb;
+output rot,dir;
 reg rot=1'b0,dir=1'b0;
 
 always @(posedge clk) begin
