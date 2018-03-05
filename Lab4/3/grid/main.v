@@ -44,7 +44,7 @@ always @(posedge clk) begin
 			step0 <= yi[1:0];
 			step1 <= 2'b0;
 		end 
-		else if((dir==2'b10)||(dir==2'b10)) 
+		else if((dir==2'b10)||(dir==2'b11)) 
 		begin
 			step0 <= 2'b0;
 			step1 <= yi[1:0];
