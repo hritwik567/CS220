@@ -1,0 +1,470 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "complement_adder.v" in library work
+Compiling verilog file "adder5.v" in library work
+Module <complement_adder> compiled
+Compiling verilog file "move.v" in library work
+Module <adder5> compiled
+Compiling verilog file "main.v" in library work
+Module <move> compiled
+Compiling verilog file "encoder.v" in library work
+Module <main> compiled
+Compiling verilog file "top.v" in library work
+Module <encoder> compiled
+Module <top> compiled
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work>.
+
+Analyzing hierarchy for module <encoder> in library <work>.
+
+Analyzing hierarchy for module <main> in library <work>.
+
+Analyzing hierarchy for module <move> in library <work>.
+
+Analyzing hierarchy for module <adder5> in library <work>.
+
+Analyzing hierarchy for module <complement_adder> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+Module <top> is correct for synthesis.
+ 
+Analyzing module <encoder> in library <work>.
+Module <encoder> is correct for synthesis.
+ 
+Analyzing module <main> in library <work>.
+Module <main> is correct for synthesis.
+ 
+Analyzing module <move> in library <work>.
+Module <move> is correct for synthesis.
+ 
+Analyzing module <adder5> in library <work>.
+Module <adder5> is correct for synthesis.
+ 
+Analyzing module <complement_adder> in library <work>.
+Module <complement_adder> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <encoder>.
+    Related source file is "encoder.v".
+    Found 1-bit register for signal <rot>.
+    Found 1-bit register for signal <dir>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <encoder> synthesized.
+
+
+Synthesizing Unit <complement_adder>.
+    Related source file is "complement_adder.v".
+    Found 1-bit xor3 for signal <sum>.
+    Found 1-bit xor2 for signal <carry$xor0000> created at line 28.
+    Summary:
+	inferred   1 Xor(s).
+Unit <complement_adder> synthesized.
+
+
+Synthesizing Unit <adder5>.
+    Related source file is "adder5.v".
+Unit <adder5> synthesized.
+
+
+Synthesizing Unit <move>.
+    Related source file is "move.v".
+Unit <move> synthesized.
+
+
+Synthesizing Unit <main>.
+    Related source file is "main.v".
+    Found 8-bit register for signal <led>.
+    Found 2-bit register for signal <dir>.
+    Found 2-bit register for signal <step0>.
+    Found 2-bit 4-to-1 multiplexer for signal <step0$mux0000>.
+    Found 2-bit register for signal <step1>.
+    Found 2-bit 4-to-1 multiplexer for signal <step1$mux0000>.
+    Found 4-bit register for signal <x>.
+    Found 4-bit register for signal <y>.
+    Summary:
+	inferred  22 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <main> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "top.v".
+Unit <top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 15
+ 1-bit register                                        : 10
+ 2-bit register                                        : 3
+ 4-bit register                                        : 2
+# Multiplexers                                         : 2
+ 2-bit 4-to-1 multiplexer                              : 2
+# Xors                                                 : 16
+ 1-bit xor2                                            : 8
+ 1-bit xor3                                            : 8
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <x_0> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_0> 
+INFO:Xst:2261 - The FF/Latch <x_1> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_1> 
+INFO:Xst:2261 - The FF/Latch <x_2> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_2> 
+INFO:Xst:2261 - The FF/Latch <x_3> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_3> 
+INFO:Xst:2261 - The FF/Latch <y_0> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_4> 
+INFO:Xst:2261 - The FF/Latch <y_1> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_5> 
+INFO:Xst:2261 - The FF/Latch <y_2> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_6> 
+INFO:Xst:2261 - The FF/Latch <y_3> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_7> 
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 24
+ Flip-Flops                                            : 24
+# Multiplexers                                         : 2
+ 2-bit 4-to-1 multiplexer                              : 2
+# Xors                                                 : 16
+ 1-bit xor2                                            : 8
+ 1-bit xor3                                            : 8
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <x_0> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_0> 
+INFO:Xst:2261 - The FF/Latch <x_1> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_1> 
+INFO:Xst:2261 - The FF/Latch <x_2> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_2> 
+INFO:Xst:2261 - The FF/Latch <x_3> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_3> 
+INFO:Xst:2261 - The FF/Latch <y_0> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_4> 
+INFO:Xst:2261 - The FF/Latch <y_1> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_5> 
+INFO:Xst:2261 - The FF/Latch <y_2> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_6> 
+INFO:Xst:2261 - The FF/Latch <y_3> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_7> 
+
+Optimizing unit <top> ...
+
+Optimizing unit <main> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 0.
+FlipFlop uut2/dir_0 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop uut2/dir_0 connected to a primary input has been replicated
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 17
+ Flip-Flops                                            : 17
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 15
+
+Cell Usage :
+# BELS                             : 49
+#      GND                         : 1
+#      LUT2                        : 7
+#      LUT3                        : 2
+#      LUT3_D                      : 2
+#      LUT3_L                      : 2
+#      LUT4                        : 26
+#      MUXF5                       : 8
+#      VCC                         : 1
+# FlipFlops/Latches                : 17
+#      FDE                         : 16
+#      FDSE                        : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 14
+#      IBUF                        : 6
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       22  out of   4656     0%  
+ Number of Slice Flip Flops:             17  out of   9312     0%  
+ Number of 4 input LUTs:                 39  out of   9312     0%  
+ Number of IOs:                          15
+ Number of bonded IOBs:                  15  out of    232     6%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clock                              | BUFGP                  | 17    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 4.834ns (Maximum Frequency: 206.868MHz)
+   Minimum input arrival time before clock: 4.015ns
+   Maximum output required time after clock: 4.683ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 4.834ns (frequency: 206.868MHz)
+  Total number of paths / destination ports: 168 / 27
+-------------------------------------------------------------------------
+Delay:               4.834ns (Levels of Logic = 4)
+  Source:            uut2/y_2 (FF)
+  Destination:       uut2/y_1 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: uut2/y_2 to uut2/y_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              9   0.591   0.899  uut2/y_2 (uut2/y_2)
+     LUT4:I1->O            1   0.704   0.000  uut2/uut2/uut/uut2/carry1_SW0_F (N24)
+     MUXF5:I0->O           1   0.321   0.499  uut2/uut2/uut/uut2/carry1_SW0 (N10)
+     LUT3_L:I1->LO         1   0.704   0.104  uut2/uut2/uut/uut4/carry1 (uut2/uut2/last)
+     LUT4:I3->O            1   0.704   0.000  uut2/uut2/out_1_or0000 (uut2/y1<1>)
+     FDE:D                     0.308          uut2/y_1
+    ----------------------------------------
+    Total                      4.834ns (3.332ns logic, 1.502ns route)
+                                       (68.9% logic, 31.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 15 / 11
+-------------------------------------------------------------------------
+Offset:              4.015ns (Levels of Logic = 2)
+  Source:            rota (PAD)
+  Destination:       uut1/rot (FF)
+  Destination Clock: clock rising
+
+  Data Path: rota to uut1/rot
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.762  rota_IBUF (rota_IBUF)
+     LUT2:I0->O            1   0.704   0.420  uut1/rot_and00001 (uut1/rot_and0000)
+     FDSE:S                    0.911          uut1/rot
+    ----------------------------------------
+    Total                      4.015ns (2.833ns logic, 1.182ns route)
+                                       (70.6% logic, 29.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.683ns (Levels of Logic = 1)
+  Source:            uut2/y_3 (FF)
+  Destination:       led<7> (PAD)
+  Source Clock:      clock rising
+
+  Data Path: uut2/y_3 to led<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              9   0.591   0.820  uut2/y_3 (uut2/y_3)
+     OBUF:I->O                 3.272          led_7_OBUF (led<7>)
+    ----------------------------------------
+    Total                      4.683ns (3.863ns logic, 0.820ns route)
+                                       (82.5% logic, 17.5% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 6.63 secs
+ 
+--> 
+
+
+Total memory usage is 516888 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :   17 (   0 filtered)
+

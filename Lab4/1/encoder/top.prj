@@ -1,0 +1,3 @@
+verilog work "ripple.v"
+verilog work "encoder.v"
+verilog work "top.v"

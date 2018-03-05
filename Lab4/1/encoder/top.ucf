@@ -1,0 +1,35 @@
+
+
+NET "led[0]" LOC = F12;
+NET "led[1]" LOC = E12;
+NET "led[2]" LOC = E11;
+NET "led[3]" LOC = F11;
+NET "led[4]" LOC = C11;
+NET "led[5]" LOC = D11;
+NET "led[6]" LOC = E9;
+NET "led[7]" LOC = F9;
+
+
+NET "led[7]" IOSTANDARD = LVTTL;
+NET "led[3]" IOSTANDARD = LVTTL;
+
+
+NET "clock" LOC = C9;
+NET "rota" LOC = K18;
+NET "rotb" LOC = G18;
+
+
+NET "led[2]" IOSTANDARD = LVTTL;
+NET "led[1]" IOSTANDARD = LVTTL;
+NET "led[0]" IOSTANDARD = LVTTL;
+NET "led[4]" IOSTANDARD = LVTTL;
+NET "led[5]" IOSTANDARD = LVTTL;
+NET "led[6]" IOSTANDARD = LVTTL;
+NET "clock" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated IO constraints 
+
+NET "rota" IOSTANDARD = LVTTL;
+NET "rotb" IOSTANDARD = LVTTL;
+NET "rota" PULLUP;
+NET "rotb" PULLUP;

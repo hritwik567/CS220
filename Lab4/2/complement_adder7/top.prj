@@ -1,0 +1,4 @@
+verilog work "complement_adder.v"
+verilog work "encoder.v"
+verilog work "adder7.v"
+verilog work "top.v"

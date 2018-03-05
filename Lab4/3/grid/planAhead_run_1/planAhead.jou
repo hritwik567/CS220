@@ -1,0 +1,69 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon Feb 12 16:23:56 2018
+# Process ID: 5187
+# Log file: /users/btech/hritvikt/Desktop/CS220/Lab4/3/grid/planAhead_run_1/planAhead.log
+# Journal file: /users/btech/hritvikt/Desktop/CS220/Lab4/3/grid/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /users/btech/hritvikt/Desktop/CS220/Lab4/3/grid/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin L13 [get_ports {y[0]}]
+endgroup
+startgroup
+set_property package_pin L14 [get_ports {y[1]}]
+endgroup
+startgroup
+set_property package_pin H18 [get_ports {y[2]}]
+endgroup
+startgroup
+set_property package_pin N17 [get_ports {y[3]}]
+endgroup
+startgroup
+set_property package_pin C9 [get_ports clock]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list clock]]
+startgroup
+set_property package_pin G18 [get_ports rotb]
+endgroup
+startgroup
+set_property package_pin K18 [get_ports rota]
+endgroup
+set_property iostandard LVTTL [get_ports [list rota]]
+set_property iostandard LVTTL [get_ports [list rotb]]
+set_property pulltype PULLUP [get_ports [list rotb]]
+set_property pulltype PULLUP [get_ports [list rota]]
+startgroup
+set_property package_pin F12 [get_ports {led[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {led[2]}]]
+startgroup
+set_property package_pin E12 [get_ports {led[1]}]
+endgroup
+startgroup
+set_property package_pin E11 [get_ports {led[2]}]
+endgroup
+startgroup
+set_property package_pin F11 [get_ports {led[3]}]
+endgroup
+startgroup
+set_property package_pin C11 [get_ports {led[4]}]
+endgroup
+startgroup
+set_property package_pin D11 [get_ports {led[5]}]
+endgroup
+startgroup
+set_property package_pin F9 [get_ports {led[6]}]
+endgroup
+startgroup
+set_property package_pin E9 [get_ports {led[6]}]
+endgroup
+startgroup
+set_property package_pin F9 [get_ports {led[7]}]
+endgroup
+startgroup
+set_property package_pin H18 [get_ports {y[2]}]
+endgroup
+save_constraints

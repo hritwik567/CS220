@@ -1,0 +1,5 @@
+verilog isim_temp "complement_adder.v"
+verilog isim_temp "encoder.v"
+verilog isim_temp "adder7.v"
+verilog isim_temp "top.v"
+verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
