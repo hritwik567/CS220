@@ -1,21 +1,21 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    16:01:06 02/12/2018 
-// Design Name: 
-// Module Name:    complement_adder 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
+// Company:
+// Engineer:
 //
-// Dependencies: 
+// Create Date:    16:01:06 02/12/2018
+// Design Name:
+// Module Name:    complement_adder
+// Project Name:
+// Target Devices:
+// Tool versions:
+// Description:
 //
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
+// Dependencies:
+//
+// Revision:
+// Revision .01 - File Created
+// Additional Comments:
 //
 //////////////////////////////////////////////////////////////////////////////////
 module complement_adder(a,b,c,op,sum,carry);
