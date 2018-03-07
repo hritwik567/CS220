@@ -18,29 +18,14 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module top(clock,rota,rotb,y,led);
-
-input clock,rota,rotb;
+module top(clk,ra,rb,y,led);
+input clk,ra,rb;
 input [3:0]y;
 
-output [7:0]led;
+output wire [7:0]led;
 wire rot,dir;
-wire [7:0]led;
 
-encoder uut1 (
-	.clk(clock),
-	.rota(rota),
-	.rotb(rotb),
-	.rot(rot),
-	.dir(dir)
-);
-
-main uut2 (
-	.yi(y),
-	.clk(clock),
-	.rot(rot),
-	.aa(dir),
-	.led(led)
-);
+encoder enc(clk,ra,rb,rot,dir);
+main main (clk,rot,dir,y,led);
 
 endmodule

@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.23 secs
  
 --> 
 Reading design: top.prj
@@ -71,7 +71,7 @@ Automatic Register Balancing       : No
 
 ---- Target Options
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 500
+Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 24
 Register Duplication               : YES
 Slice Packing                      : YES
@@ -192,22 +192,26 @@ Unit <adder5> synthesized.
 
 Synthesizing Unit <move>.
     Related source file is "move.v".
+    Found 4-bit register for signal <out>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
 Unit <move> synthesized.
 
 
 Synthesizing Unit <main>.
     Related source file is "main.v".
+WARNING:Xst:647 - Input <rdir> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <dir> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
     Found 8-bit register for signal <led>.
-    Found 2-bit register for signal <dir>.
-    Found 2-bit register for signal <step0>.
-    Found 2-bit 4-to-1 multiplexer for signal <step0$mux0000>.
-    Found 2-bit register for signal <step1>.
-    Found 2-bit 4-to-1 multiplexer for signal <step1$mux0000>.
+    Found 1-bit register for signal <opx>.
+    Found 1-bit register for signal <opy>.
+    Found 1-bit register for signal <prev>.
+    Found 2-bit register for signal <sx>.
+    Found 2-bit register for signal <sy>.
     Found 4-bit register for signal <x>.
     Found 4-bit register for signal <y>.
     Summary:
-	inferred  22 D-type flip-flop(s).
-	inferred   4 Multiplexer(s).
+	inferred  23 D-type flip-flop(s).
 Unit <main> synthesized.
 
 
@@ -220,12 +224,10 @@ Unit <top> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Registers                                            : 15
- 1-bit register                                        : 10
- 2-bit register                                        : 3
- 4-bit register                                        : 2
-# Multiplexers                                         : 2
- 2-bit 4-to-1 multiplexer                              : 2
+# Registers                                            : 19
+ 1-bit register                                        : 13
+ 2-bit register                                        : 2
+ 4-bit register                                        : 4
 # Xors                                                 : 16
  1-bit xor2                                            : 8
  1-bit xor3                                            : 8
@@ -236,23 +238,21 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-INFO:Xst:2261 - The FF/Latch <x_0> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_0> 
-INFO:Xst:2261 - The FF/Latch <x_1> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_1> 
-INFO:Xst:2261 - The FF/Latch <x_2> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_2> 
-INFO:Xst:2261 - The FF/Latch <x_3> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_3> 
-INFO:Xst:2261 - The FF/Latch <y_0> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_4> 
-INFO:Xst:2261 - The FF/Latch <y_1> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_5> 
-INFO:Xst:2261 - The FF/Latch <y_2> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_6> 
-INFO:Xst:2261 - The FF/Latch <y_3> in Unit <uut2> is equivalent to the following FF/Latch, which will be removed : <led_7> 
+INFO:Xst:2261 - The FF/Latch <x_0> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_0> 
+INFO:Xst:2261 - The FF/Latch <x_1> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_1> 
+INFO:Xst:2261 - The FF/Latch <x_2> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_2> 
+INFO:Xst:2261 - The FF/Latch <x_3> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_3> 
+INFO:Xst:2261 - The FF/Latch <y_0> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_4> 
+INFO:Xst:2261 - The FF/Latch <y_1> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_5> 
+INFO:Xst:2261 - The FF/Latch <y_2> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_6> 
+INFO:Xst:2261 - The FF/Latch <y_3> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_7> 
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Registers                                            : 24
- Flip-Flops                                            : 24
-# Multiplexers                                         : 2
- 2-bit 4-to-1 multiplexer                              : 2
+# Registers                                            : 33
+ Flip-Flops                                            : 33
 # Xors                                                 : 16
  1-bit xor2                                            : 8
  1-bit xor3                                            : 8
@@ -273,13 +273,14 @@ INFO:Xst:2261 - The FF/Latch <y_3> in Unit <main> is equivalent to the following
 
 Optimizing unit <top> ...
 
+Optimizing unit <move> ...
+
 Optimizing unit <main> ...
+WARNING:Xst:2677 - Node <enc/dir> of sequential type is unconnected in block <top>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 0.
-FlipFlop uut2/dir_0 has been replicated 1 time(s)
-INFO:Xst:1843 - HDL ADVISOR - FlipFlop uut2/dir_0 connected to a primary input has been replicated
 
 Final Macro Processing ...
 
@@ -287,8 +288,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 17
- Flip-Flops                                            : 17
+# Registers                                            : 24
+ Flip-Flops                                            : 24
 
 =========================================================================
 
@@ -317,17 +318,17 @@ Design Statistics
 # IOs                              : 15
 
 Cell Usage :
-# BELS                             : 49
+# BELS                             : 58
 #      GND                         : 1
-#      LUT2                        : 7
-#      LUT3                        : 2
-#      LUT3_D                      : 2
-#      LUT3_L                      : 2
-#      LUT4                        : 26
-#      MUXF5                       : 8
-#      VCC                         : 1
-# FlipFlops/Latches                : 17
-#      FDE                         : 16
+#      LUT2                        : 11
+#      LUT3                        : 12
+#      LUT4                        : 20
+#      LUT4_L                      : 4
+#      MUXF5                       : 10
+# FlipFlops/Latches                : 24
+#      FD                          : 1
+#      FDE                         : 14
+#      FDS                         : 8
 #      FDSE                        : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -341,9 +342,9 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                       22  out of   4656     0%  
- Number of Slice Flip Flops:             17  out of   9312     0%  
- Number of 4 input LUTs:                 39  out of   9312     0%  
+ Number of Slices:                       27  out of   4656     0%  
+ Number of Slice Flip Flops:             24  out of   9312     0%  
+ Number of 4 input LUTs:                 47  out of   9312     0%  
  Number of IOs:                          15
  Number of bonded IOBs:                  15  out of    232     6%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -369,7 +370,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clock                              | BUFGP                  | 17    |
+clk                                | BUFGP                  | 24    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -380,9 +381,9 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 4.834ns (Maximum Frequency: 206.868MHz)
-   Minimum input arrival time before clock: 4.015ns
-   Maximum output required time after clock: 4.683ns
+   Minimum period: 4.741ns (Maximum Frequency: 210.926MHz)
+   Minimum input arrival time before clock: 3.875ns
+   Maximum output required time after clock: 4.846ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -390,81 +391,80 @@ Timing Detail:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clock'
-  Clock period: 4.834ns (frequency: 206.868MHz)
-  Total number of paths / destination ports: 168 / 27
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.741ns (frequency: 210.926MHz)
+  Total number of paths / destination ports: 221 / 39
 -------------------------------------------------------------------------
-Delay:               4.834ns (Levels of Logic = 4)
-  Source:            uut2/y_2 (FF)
-  Destination:       uut2/y_1 (FF)
-  Source Clock:      clock rising
-  Destination Clock: clock rising
+Delay:               4.741ns (Levels of Logic = 3)
+  Source:            main/opx (FF)
+  Destination:       main/mv1/out_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
 
-  Data Path: uut2/y_2 to uut2/y_1
+  Data Path: main/opx to main/mv1/out_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              9   0.591   0.899  uut2/y_2 (uut2/y_2)
-     LUT4:I1->O            1   0.704   0.000  uut2/uut2/uut/uut2/carry1_SW0_F (N24)
-     MUXF5:I0->O           1   0.321   0.499  uut2/uut2/uut/uut2/carry1_SW0 (N10)
-     LUT3_L:I1->LO         1   0.704   0.104  uut2/uut2/uut/uut4/carry1 (uut2/uut2/last)
-     LUT4:I3->O            1   0.704   0.000  uut2/uut2/out_1_or0000 (uut2/y1<1>)
-     FDE:D                     0.308          uut2/y_1
+     FDE:C->Q             14   0.591   1.035  main/opx (main/opx)
+     LUT3:I2->O            4   0.704   0.591  main/mv1/add5/ca1/carry1 (main/mv1/add5/c<0>)
+     LUT4_L:I3->LO         1   0.704   0.104  main/mv1/add5/ca2/carry1 (main/mv1/add5/c<1>)
+     LUT4:I3->O            1   0.704   0.000  main/mv1/out_mux0000<3> (main/mv1/out_mux0000<3>)
+     FDS:D                     0.308          main/mv1/out_0
     ----------------------------------------
-    Total                      4.834ns (3.332ns logic, 1.502ns route)
-                                       (68.9% logic, 31.1% route)
+    Total                      4.741ns (3.011ns logic, 1.730ns route)
+                                       (63.5% logic, 36.5% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
-  Total number of paths / destination ports: 15 / 11
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 16 / 8
 -------------------------------------------------------------------------
-Offset:              4.015ns (Levels of Logic = 2)
-  Source:            rota (PAD)
-  Destination:       uut1/rot (FF)
-  Destination Clock: clock rising
+Offset:              3.875ns (Levels of Logic = 2)
+  Source:            ra (PAD)
+  Destination:       enc/rot (FF)
+  Destination Clock: clk rising
 
-  Data Path: rota to uut1/rot
+  Data Path: ra to enc/rot
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   1.218   0.762  rota_IBUF (rota_IBUF)
-     LUT2:I0->O            1   0.704   0.420  uut1/rot_and00001 (uut1/rot_and0000)
-     FDSE:S                    0.911          uut1/rot
+     IBUF:I->O             2   1.218   0.622  ra_IBUF (ra_IBUF)
+     LUT2:I0->O            1   0.704   0.420  enc/rot_and00001 (enc/rot_and0000)
+     FDSE:S                    0.911          enc/rot
     ----------------------------------------
-    Total                      4.015ns (2.833ns logic, 1.182ns route)
-                                       (70.6% logic, 29.4% route)
+    Total                      3.875ns (2.833ns logic, 1.042ns route)
+                                       (73.1% logic, 26.9% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 8 / 8
 -------------------------------------------------------------------------
-Offset:              4.683ns (Levels of Logic = 1)
-  Source:            uut2/y_3 (FF)
-  Destination:       led<7> (PAD)
-  Source Clock:      clock rising
+Offset:              4.846ns (Levels of Logic = 1)
+  Source:            main/y_1 (FF)
+  Destination:       led<5> (PAD)
+  Source Clock:      clk rising
 
-  Data Path: uut2/y_3 to led<7>
+  Data Path: main/y_1 to led<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              9   0.591   0.820  uut2/y_3 (uut2/y_3)
-     OBUF:I->O                 3.272          led_7_OBUF (led<7>)
+     FDE:C->Q             13   0.591   0.983  main/y_1 (main/y_1)
+     OBUF:I->O                 3.272          led_5_OBUF (led<5>)
     ----------------------------------------
-    Total                      4.683ns (3.863ns logic, 0.820ns route)
-                                       (82.5% logic, 17.5% route)
+    Total                      4.846ns (3.863ns logic, 0.983ns route)
+                                       (79.7% logic, 20.3% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 6.63 secs
+Total REAL time to Xst completion: 39.00 secs
+Total CPU time to Xst completion: 30.28 secs
  
 --> 
 
 
-Total memory usage is 516888 kilobytes
+Total memory usage is 521008 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    4 (   0 filtered)
-Number of infos    :   17 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :   16 (   0 filtered)
 

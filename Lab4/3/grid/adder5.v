@@ -18,21 +18,19 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module adder5(cor,s,op,f,last);
-	input [3:0]cor;
-	input [1:0]s;
+module adder5(pos,step,op,tmp,last);
+	input [3:0] pos;
+	input [1:0] step;
 	input op;
 
-	output [3:0]f;
-	output last;
-	wire [3:0]f;
-	wire last;
-	
+	output wire[3:0]tmp;
+	output wire last;
+
 	wire [2:0]c;
 
-	complement_adder uut1 (cor[0],s[0],op,op,f[0],c[0]);
-	complement_adder uut2 (cor[1],s[1],c[0],op,f[1],c[1]);
-	complement_adder uut3 (cor[2],0,c[1],op,f[2],c[2]);
-	complement_adder uut4 (cor[3],0,c[2],op,f[3],last);
+	complement_adder ca1 (pos[0],step[0],op,op,tmp[0],c[0]);
+	complement_adder ca2 (pos[1],step[1],c[0],op,tmp[1],c[1]);
+	complement_adder ca3 (pos[2],1'b0,c[1],op,tmp[2],c[2]);
+	complement_adder ca4 (pos[3],1'b0,c[2],op,tmp[3],last);
 
 endmodule

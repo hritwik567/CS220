@@ -1,7 +1,7 @@
 
 # PlanAhead Launch Script for Pre-Synthesis Floorplanning, created by Project Navigator
 
-create_project -name grid -dir "/users/btech/hritvikt/Desktop/CS220/Lab4/3/grid/planAhead_run_2" -part xc3s500efg320-4
+create_project -name grid -dir "/users/btech/anay/Desktop/CS220/Lab4/3/grid/planAhead_run_3" -part xc3s500efg320-4
 set_param project.pinAheadLayout yes
 set srcset [get_property srcset [current_run -impl]]
 set_property target_constrs_file "top.ucf" [current_fileset -constrset]

@@ -1,8 +1,8 @@
 INTSTYLE=impact
-INFILE=/users/btech/hritvikt/Desktop/CS220/Lab4/3/grid/impact.xsl
-OUTFILE=/users/btech/hritvikt/Desktop/CS220/Lab4/3/grid/impact.xsl
+INFILE=/users/btech/anay/Desktop/CS220/Lab4/3/grid/impact.xsl
+OUTFILE=/users/btech/anay/Desktop/CS220/Lab4/3/grid/impact.xsl
 FAMILY=Multiple
 PART=Multiple
-WORKINGDIR=/users/btech/hritvikt/Desktop/CS220/Lab4/3/grid
+WORKINGDIR=/users/btech/anay/Desktop/CS220/Lab4/3/grid
 LICENSE=iMPACT
 USER_INFO=iMPACT

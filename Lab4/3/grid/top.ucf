@@ -3,20 +3,20 @@
 NET "y[0]" LOC = L13;
 NET "y[1]" LOC = L14;
 NET "y[3]" LOC = N17;
-NET "clock" LOC = C9;
+NET "clk" LOC = C9;
 
 
-NET "clock" IOSTANDARD = LVCMOS33;
+NET "clk" IOSTANDARD = LVCMOS33;
 
 
-NET "rotb" LOC = G18;
-NET "rota" LOC = K18;
+NET "rb" LOC = G18;
+NET "ra" LOC = K18;
 
 
-NET "rota" IOSTANDARD = LVTTL;
-NET "rotb" IOSTANDARD = LVTTL;
-NET "rotb" PULLUP;
-NET "rota" PULLUP;
+NET "ra" IOSTANDARD = LVTTL;
+NET "rb" IOSTANDARD = LVTTL;
+NET "rb" PULLUP;
+NET "ra" PULLUP;
 
 
 NET "led[0]" LOC = F12;

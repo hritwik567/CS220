@@ -1,0 +1,4 @@
+verilog work "complement_adder.v"
+verilog work "adder5.v"
+verilog work "move.v"
+verilog work "main.v"

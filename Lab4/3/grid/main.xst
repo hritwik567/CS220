@@ -1,0 +1,5 @@
+set -tmpdir "/users/btech/anay/Desktop/CS220/Lab4/3/grid/xst/projnav.tmp"
+set -xsthdpdir "/users/btech/anay/Desktop/CS220/Lab4/3/grid/xst"
+elaborate
+-ifn main.prj
+-ifmt mixed
