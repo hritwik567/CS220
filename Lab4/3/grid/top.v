@@ -1,21 +1,23 @@
 `timescale 1ns / 1ps
+`include "encoder.v"
+`include "main.v"
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    16:13:03 02/12/2018 
-// Design Name: 
-// Module Name:    top 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
+// Company:
+// Engineer:
 //
-// Dependencies: 
+// Create Date:    16:13:03 02/12/2018
+// Design Name:
+// Module Name:    top
+// Project Name:
+// Target Devices:
+// Tool versions:
+// Description:
 //
-// Revision: 
+// Dependencies:
+//
+// Revision:
 // Revision 0.01 - File Created
-// Additional Comments: 
+// Additional Comments:
 //
 //////////////////////////////////////////////////////////////////////////////////
 module top(clk,ra,rb,y,led);
@@ -27,5 +29,4 @@ wire rot,dir;
 
 encoder enc(clk,ra,rb,rot,dir);
 main main (clk,rot,dir,y,led);
-
 endmodule

@@ -45,14 +45,16 @@ always @(posedge clk) begin
 			step2 <= 2'b0;
 			step3 <= y[1:0];
 		end
-		led[0] <= x[0];
-		led[1] <= x[1];
-		led[2] <= x[2];
-		led[3] <= x[3];
-		led[4] <= y[0];
-		led[5] <= y[1];
-		led[6] <= y[2];
-		led[7] <= y[3];
+		led[3:0]<=x;
+		led[7:4]<=y;
+		//led[0] <= x[0];
+		//led[1] <= x[1];
+		//led[2] <= x[2];
+		//led[3] <= x[3];
+		//led[4] <= y[0];
+		//led[5] <= y[1];
+		//led[6] <= y[2];
+		//led[7] <= y[3];
 	end 
 end
 

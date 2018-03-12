@@ -1,21 +1,22 @@
 `timescale 1ns / 1ps
+`include "adder5.v"
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    16:03:10 02/12/2018 
-// Design Name: 
-// Module Name:    move 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
+// Company:
+// Engineer:
 //
-// Dependencies: 
+// Create Date:    16:03:10 02/12/2018
+// Design Name:
+// Module Name:    move
+// Project Name:
+// Target Devices:
+// Tool versions:
+// Description:
 //
-// Revision: 
+// Dependencies:
+//
+// Revision:
 // Revision 0.01 - File Created
-// Additional Comments: 
+// Additional Comments:
 //
 //////////////////////////////////////////////////////////////////////////////////
 module move(clk,pos,step,op,out);

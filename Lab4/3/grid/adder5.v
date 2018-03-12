@@ -1,21 +1,22 @@
 `timescale 1ns / 1ps
+`include "complement_adder.v"
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    16:02:18 02/12/2018 
-// Design Name: 
-// Module Name:    adder5 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
+// Company:
+// Engineer:
 //
-// Dependencies: 
+// Create Date:    16:02:18 02/12/2018
+// Design Name:
+// Module Name:    adder5
+// Project Name:
+// Target Devices:
+// Tool versions:
+// Description:
 //
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
+// Dependencies:
+//
+// Revision:
+// Revision 0.01 - tmpile Created
+// Additional Comments:
 //
 //////////////////////////////////////////////////////////////////////////////////
 module adder5(pos,step,op,tmp,last);

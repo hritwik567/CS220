@@ -1,21 +1,22 @@
 `timescale 1ns / 1ps
+`include "move.v"
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    16:07:25 02/12/2018 
-// Design Name: 
-// Module Name:    main 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
+// Company:
+// Engineer:
 //
-// Dependencies: 
+// Create Date:    16:07:25 02/12/2018
+// Design Name:
+// Module Name:    main
+// Project Name:
+// Target Devices:
+// Tool versions:
+// Description:
 //
-// Revision: 
+// Dependencies:
+//
+// Revision:
 // Revision 0.01 - File Created
-// Additional Comments: 
+// Additional Comments:
 //
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -24,8 +25,7 @@ module main(clk,rot,rdir,yi,led);
 input clk,rot,rdir;
 input [3:0]yi;
 
-output [7:0] led;
-reg [7:0] led;
+output reg [7:0] led;
 
 reg [3:0] x=4'b0,y=4'b0;
 wire [3:0] x1,y1;

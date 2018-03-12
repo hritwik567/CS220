@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/users/misc/vishadv/Documents/lab5_1/simulation_isim_beh.exe" -prj "/users/misc/vishadv/Documents/lab5_1/simulation_beh.prj" "work.simulation" "work.glbl" 
