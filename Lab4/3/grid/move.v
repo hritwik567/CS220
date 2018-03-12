@@ -19,13 +19,13 @@
 // Additional Comments:
 //
 //////////////////////////////////////////////////////////////////////////////////
-module move(pos,step,op,out);
+module move(clk,pos,step,op,out);
 
 input [3:0]pos;
 input [1:0]step;
-input op;
+input op,clk;
 
-output wire [3:0]out;
+output reg [3:0]out;
 
 wire [3:0]tmp;
 wire last;

@@ -25,8 +25,7 @@ module main(clk,rot,rdir,yi,led);
 input clk,rot,rdir;
 input [3:0]yi;
 
-output [7:0] led;
-reg [7:0] led;
+output reg [7:0] led;
 
 reg [3:0] x=4'b0,y=4'b0;
 wire [3:0] x1,y1;
@@ -53,6 +52,6 @@ always @(posedge clk) begin
 	end
 end
 
-move mv1 (x,sx,opx,x1);
-move mv2 (y,sy,opy,y1);
+move mv1 (clk,x,sx,opx,x1);
+move mv2 (clk,y,sy,opy,y1);
 endmodule

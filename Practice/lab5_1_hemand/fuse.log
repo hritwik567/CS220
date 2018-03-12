@@ -1,0 +1,26 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o /users/misc/vishadv/Documents/lab5_1/simulation_isim_beh.exe -prj /users/misc/vishadv/Documents/lab5_1/simulation_beh.prj work.simulation work.glbl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "/users/misc/vishadv/Documents/lab5_1/LCD_base_driver.v" into library work
+Analyzing Verilog file "/users/misc/vishadv/Documents/lab5_1/LCD_driver.v" into library work
+Analyzing Verilog file "/users/misc/vishadv/Documents/lab5_1/LCD_top.v" into library work
+Analyzing Verilog file "/users/misc/vishadv/Documents/lab5_1/simulation.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 99916 KB
+Fuse CPU Usage: 2230 ms
+Compiling module LCD_base_driver
+Compiling module LCD_driver
+Compiling module LCD_top
+Compiling module simulation
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 5 Verilog Units
+Built simulation executable /users/misc/vishadv/Documents/lab5_1/simulation_isim_beh.exe
+Fuse Memory Usage: 659040 KB
+Fuse CPU Usage: 2260 ms
+GCC CPU Usage: 510 ms
