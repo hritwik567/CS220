@@ -27,16 +27,14 @@ module lcd_driver(line_a, line_b, clk, lrs, lw, le, data);
     output reg[3:0] data;
     reg le,lw,lrs;
 
-    reg [19:0] counter;
     reg [15:0] state;
     // conter can count up to 100'00'00 <= 0b11110100001001000000
 
     initial begin
-        counter=0,state=0;
+        state=0;
     end
 
     always @(posedge clk) begin
-        // if(counter==20000000) begin//instead of 100000
             case(state)
                 state of initialization step
                     le<=0;#delay
@@ -93,7 +91,6 @@ module lcd_driver(line_a, line_b, clk, lrs, lw, le, data);
                       le<=1;#delay
 
                 first line display,16 write commands
-
                   // 1st
                       le<=0;#delay
                       {lrs,lw}=2'b10;
@@ -162,121 +159,79 @@ module lcd_driver(line_a, line_b, clk, lrs, lw, le, data);
                       {lrs,lw}=2'b10
                       data <= line_a[71:68];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[67:64];#delay
                       le<=1;#delay
-
                   // 9th
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[63:60];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[59:56];#delay
                       le<=1;#delay
-
                   // 10th
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[55:52];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[51:48];#delay
                       le<=1;#delay
-
                   // 11th
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[47:44];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[43:40];#delay
                       le<=1;#delay
-
                   // 12th
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[39:36];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[35:32];#delay
                       le<=1;#delay
-
                   // 13th
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[31:28];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[27:24];#delay
                       le<=1;#delay
-
                   // 14th
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[23:20];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[19:16];#delay
                       le<=1;#delay
-
                   // 15th
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[15:12];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[11:8];#delay
                       le<=1;#delay
-
                   // 16th
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[7:4];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_a[3:0];#delay
                       le<=1;#delay
@@ -291,103 +246,68 @@ module lcd_driver(line_a, line_b, clk, lrs, lw, le, data);
 
                 second line display,16 write commands
                   // 1st
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[127:124];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[123:120];#delay
                       le<=1;#delay
-
                   // 2nd
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[119:116];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[115:112];#delay
                       le<=1;#delay
-
                   //3rd
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[111:108];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[107:104];#delay
                       le<=1;#delay
-
                   // 4th
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[103:100];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[99:96];#delay
                       le<=1;#delay
-
                   // 5th
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[95:92];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[91:88];#delay
                       le<=1;#delay
-
                   // 6th
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[87:84];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[83:80];#delay
                       le<=1;#delay
-
                   // 7th
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[79:76];#delay
                       le<=1;#delay
-
                       led<=0;#delay
-
                       {lrs,lw}=2'b10
                       data <= line_b[75:72];#delay
                       le<=1;#delay
-
                   // 8th
                       led<=0;#delay
                       {lrs,lw}=2'b10
@@ -469,16 +389,11 @@ module lcd_driver(line_a, line_b, clk, lrs, lw, le, data);
                       {lrs,lw}=2'b10
                       data <= line_b[3:0];#delay
                       le<=1;#delay
+
                 default: begin
                     led<=0;#delay
 
           endcase
             state<=state+1;// move to next state
-
-        //     counter<=0;
-        // end
-        // else begin
-        //     counter <=counter+1;
-        // end
     end
 endmodule
