@@ -8,9 +8,7 @@ module regfile(
 	output reg [15:0] rdDataA,
 	input readB,
 	input [4:0] rdAddrB,
-	output reg [15:0] rdDataB,
-	input wshift,
-	input reg [15:0] shData
+	output reg [15:0] rdDataB
 	);
 
 	//regfile renamed to file, as it clashed with module name
