@@ -19,9 +19,9 @@ display modes mode
 */
 //TODO:
 //			LCD controller mode->result
-//			reset function DONE
 //			adder/subtracter  @always (rdDataA+/-rdDataB)->result
 //			shifter           @always (rdDataA<<shift)->shOut
+`include "add_sub.v"
 module(
 	input [3:0] in,
 	input clk,
