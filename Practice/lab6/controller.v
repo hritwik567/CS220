@@ -22,13 +22,13 @@ display modes mode
 //			adder/subtracter  @always (rdDataA+/-rdDataB)->result
 //			shifter           @always (rdDataA<<shift)->shOut
 `include "add_sub.v"
-module(
+
+module controller(
 	input [3:0] in,
 	input clk,
 	input push_b,//pushbutton
 	input rot_a,
-	input rot_b,
-	);
+	input rot_b);
 
 	reg rot_e, prev;
 	reg [2:0] op;
@@ -40,12 +40,12 @@ module(
 	reg func=0;//add or subtract (rdDataA+rdDataB)
 	reg [15:0] result;//adder/subtractor result
 
-	//add-sub
-	add_sub(rdDataA,rdDataB,func,result);
-
 	reg readA=0, readB=0, write=0;
 	reg [4:0] wrAddr, rdAddrA, rdAddrB;
 	reg [15:0] wrData, rdDataA, rdDataB;
+
+	//add-sub
+	add_sub  as(rdDataA,rdDataB,func,result);
 
 	//lcd
 	reg [2:0]mode=3'b0;
@@ -63,7 +63,7 @@ module(
 			cnt<=1;
 			opcode<=3'b0;
 			shift<=4'b0;mode<=3'b0;func<=0;
-			readA<=0,readB<=0,write<=0;
+			readA<=0;readB<=0;write<=0;
 		end
 
 		//shift
@@ -73,29 +73,35 @@ module(
 		prev <= rot_e;
 		if(!prev & rot_e) begin
 			if(cnt==0) begin
-			end else if(cnt==1) begin
+			end
+			else if(cnt==1) begin
 				//reset
 				cnt<=1;
 				opcode<=3'b0;
 				shift<=0;mode<=0;func<=0;
-				readA<=0, readB<=0, write<=0;
+				readA<=0;readB<=0;write<=0;
 				//input
 				op <= in[2:0];
 				mode=3'b100;//inform input taken
-			end else if(cnt==2) begin
-				case(op):
+			end
+			else if(cnt==2) begin
+				case(op)
 					3'b000:wrAddr[3:0] <= in;
 					default:rdAddrA[3:0] <= in;
 				endcase
-			end else if(cnt==3) begin
-				case(op):
+			end
+			else if(cnt==3) begin
+				case(op)
 					3'b000:wrAddr[4] <= in[0];
 					default:rdAddrA[4] <= in[0];
 				endcase
-			end else if(cnt==4) begin
-				case(op):
+			end
+			else if(cnt==4) begin
+				case(op)
 					3'b000:wrData[3:0] <= in;
-					3'b001:mode=3'b010;readA=1;cnt<=0;//done
+					3'b001:begin
+									mode=3'b010;readA=1;cnt<=0;//done
+								end
 					3'b010:rdAddrB[3:0] <= in;
 					3'b011:wrAddr[3:0] <= in;
 					3'b100:rdAddrB[3:0] <= in;
@@ -103,10 +109,11 @@ module(
 					3'b110:rdAddrB[3:0] <= in;
 					3'b111:shift<=in;
 				endcase
-			end else if(cnt==5) begin
-				case(op):
+			end
+			else if(cnt==5) begin
+				case(op)
 					3'b000:wrData[7:4] <= in;
-					3'b001:
+					3'b001:;
 					3'b010:rdAddrB[4] <= in[0];
 					3'b011:wrAddr[4] <= in[0];
 					3'b100:rdAddrB[4] <= in[0];
@@ -114,89 +121,105 @@ module(
 					3'b110:rdAddrB[4] <= in[0];
 					3'b111:wrAddr[3:0] <= in;
 				endcase
-			end else if(cnt==6) begin
-				case(op):
+			end
+			else if(cnt==6) begin
+				case(op)
 					3'b000:wrData[11:8] <= in;
-					3'b001:
-					3'b010:mode=3'b011;readA=1;readB=1;cnt<=0;//done
+					3'b001:;
+					3'b010:begin
+									mode<=3'b011;readA<=1;readB<=1;cnt<=0;//done
+								end
 					3'b011:wrData[3:0] <= in;
 					3'b100:wrAddr[3:0] <= in;
-					3'b101:
-					3'b110:
+					3'b101:;
+					3'b110:;
 					3'b111:wrAddr[4] <= in[0];
 				endcase
-			end else if(cnt==7) begin
-				case(op):
+			end
+			else if(cnt==7) begin
+				case(op)
 					3'b000:wrData[15:12] <= in;
-					3'b001:
-					3'b010:
+					3'b001:;
+					3'b010:;
 					3'b011:wrData[7:4] <= in;
 					3'b100:wrAddr[4] <= in[0];
 					3'b101:wrAddr[4] <= in[0];
 					3'b110:wrAddr[4] <= in[0];
-					3'b111:#32 wrData<=shOut;#5 mode<=3'b001;write=1;cnt<=0;//done
+					3'b111:begin
+									#32 wrData<=shOut;#5 mode<=3'b001;write=1;cnt<=0;//done
+									end
 				endcase
 			end
-			end else if(cnt==8) begin
-				case(op):
-					3'b000:mode=3'b001;write=1;cnt<=0;//done
-					3'b001:
-					3'b010:
+			else if(cnt==8) begin
+				case(op)
+					3'b000:begin
+										mode=3'b001;write=1;cnt<=0;//done
+								end
+					3'b001:;
+					3'b010:;
 					3'b011:wrData[11:8] <= in;
 					3'b100:wrData[3:0] <= in;
-					3'b101:func=0;#32 wrData<=result;#5 write<=1;mode<=3'b001;cnt<=0;//done
-					3'b110:func=1;#32 wrData<=result;#5 write<=1;mode<=3'b001;cnt<=0;//done
-					3'b111:
+					3'b101:begin
+										func=0;#32 wrData<=result;#5 write<=1;mode<=3'b001;cnt<=0;//done
+									end
+					3'b110:begin
+										func=1;#32 wrData<=result;#5 write<=1;mode<=3'b001;cnt<=0;//done
+									end
+					3'b111:;
 				endcase
 			end
-			end else if(cnt==9) begin
-				case(op):
-					3'b000:
-					3'b001:
-					3'b010:
+			else if(cnt==9) begin
+				case(op)
+					3'b000:;
+					3'b001:;
+					3'b010:;
 					3'b011:wrData[15:12] <= in;
 					3'b100:wrData[7:4] <= in;
-					3'b101:
-					3'b110:
-					3'b111:
+					3'b101:;
+					3'b110:;
+					3'b111:;
 				endcase
 			end
-			end else if(cnt==10) begin
-				case(op):
-					3'b000:
-					3'b001:
-					3'b010:
-					3'b011:mode=3'b010;write=1;readA=1;cnt<=0;//done
+			else if(cnt==10) begin
+				case(op)
+					3'b000:;
+					3'b001:;
+					3'b010:;
+					3'b011:begin mode=3'b010;write=1;readA=1;cnt<=0;//done
+									end
 					3'b100:wrData[11:8] <= in;
-					3'b101:
-					3'b110:
-					3'b111:
+					3'b101:;
+					3'b110:;
+					3'b111:;
 				endcase
 			end
-			end else if(cnt==11) begin
-				case(op):
-					3'b000:
-					3'b001:
-					3'b010:
-					3'b011:
+			else if(cnt==11) begin
+				case(op)
+					3'b000:;
+					3'b001:;
+					3'b010:;
+					3'b011:;
 					3'b100:wrData[15:12] <= in;
-					3'b101:
-					3'b110:
-					3'b111:
+					3'b101:;
+					3'b110:;
+					3'b111:;
 				endcase
 			end
-			end else if(cnt==12) begin
-				case(op):
-					3'b000:
-					3'b001:
-					3'b010:
-					3'b011:
-					3'b100:mode=3'b011;readA=1;readB=1;write=1;cnt<=0;//done
-					3'b101:
-					3'b110:
-					3'b111:
+			else if(cnt==12) begin
+				case(op)
+					3'b000:;
+					3'b001:;
+					3'b010:;
+					3'b011:;
+					3'b100:begin
+									mode=3'b011;readA=1;readB=1;write=1;cnt<=0;//done
+									end
+					3'b101:;
+					3'b110:;
+					3'b111:;
 				endcase
 			end
 			cnt <= cnt + 1;
 		end
+	end
 endmodule
