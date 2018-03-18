@@ -11,11 +11,11 @@ opcode cnt-> 0 1           2 3     4 5    6 7   8 9  10 11
 */
 /*
 display modes mode
-0 opcode is op
-1	ADD\nVal (write)   wrAddr/wrData
+0 blank
+1 ADD\nVal (write)   wrAddr/wrData
 2 ADD\nVal (read)    rdAddrA/rdDataA
-3 Val\nVal (read/read) rdDataA/rdDataA
-4 ADD\nVal (shift) wrAddr/shOut ->NOT needed
+3 Val\nVal (read/read) rdDataA/rdDataB
+4 opcode is op
 */
 //TODO:
 //			LCD controller mode->result
@@ -32,13 +32,17 @@ module(
 
 	reg rot_e, prev;
 	reg [2:0] op;
-	reg [4:0] cnt=4'b0;
+	reg [4:0] cnt=4'b0001;
 
 	reg [3:0] shift=4'b0;
 	reg [15:0] shOut;
 
 	reg func=0;//add or subtract (rdDataA+rdDataB)
 	reg [15:0] result;//adder/subtractor result
+
+	//add-sub
+	add-sub(rdDataA,rdDataB,func,result);
+
 
 	reg readA=0, readB=0, write=0;
 	reg [4:0] wrAddr, rdAddrA, rdAddrB;
@@ -57,12 +61,14 @@ module(
 
 		//functions
 		if(push_b) begin
-			cnt<=0;
+			cnt<=1;
 			opcode<=3'b0;
 			shift<=4'b0;mode<=3'b0;func<=0;
 			readA<=0,readB<=0,write<=0;
 		end
 
+		//shift
+		shOut <= rdDataA << shift;
 
 		//input
 		prev <= rot_e;
@@ -70,13 +76,13 @@ module(
 			if(cnt==0) begin
 			end else if(cnt==1) begin
 				//reset
-				cnt<=0;
+				cnt<=1;
 				opcode<=3'b0;
 				shift<=0;mode<=0;func<=0;
 				readA<=0, readB<=0, write<=0;
 				//input
 				op <= in[2:0];
-				mode=3'b000;//inform input taken
+				mode=3'b100;//inform input taken
 			end else if(cnt==2) begin
 				case(op):
 					3'b000:wrAddr[3:0] <= in;
@@ -129,7 +135,7 @@ module(
 					3'b100:wrAddr[4] <= in[0];
 					3'b101:wrAddr[4] <= in[0];
 					3'b110:wrAddr[4] <= in[0];
-					3'b111:wshift=1;#32 wrData<=shOut;#5 mode<=3'b001;cnt<=0;//done
+					3'b111:#32 wrData<=shOut;#5 mode<=3'b001;write=1;cnt<=0;//done
 				endcase
 			end
 			end else if(cnt==8) begin
