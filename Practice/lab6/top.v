@@ -29,6 +29,5 @@ module top(
     end
   end
 
-
   lcd_driver uut(LINE1,LINE2,clk,LCD_RS,LCD_W,LCD_E,data);
 endmodule

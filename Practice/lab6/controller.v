@@ -41,8 +41,7 @@ module(
 	reg [15:0] result;//adder/subtractor result
 
 	//add-sub
-	add-sub(rdDataA,rdDataB,func,result);
-
+	add_sub(rdDataA,rdDataB,func,result);
 
 	reg readA=0, readB=0, write=0;
 	reg [4:0] wrAddr, rdAddrA, rdAddrB;

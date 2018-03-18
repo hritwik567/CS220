@@ -1,4 +1,4 @@
-module add-sub(
+module add_sub(
 	input [15:0] d_1,
 	input [15:0] d_2,
 	input sign,
@@ -25,4 +25,3 @@ module add-sub(
 	complement_adder ca16 (d_1[15],d_2[15],c[14]sign,out[15],c[15]);
 
 endmodule
-
