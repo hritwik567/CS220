@@ -17,6 +17,10 @@ display modes mode
 3 Val\nVal (read/read)
 4 <------>
 */
+//TODO: LCD controller with the above display modes
+//			reset function
+//			adder/subtracter
+//			shifter
 module(
 	input [3:0] in,
 	input clk,
