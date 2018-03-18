@@ -8,7 +8,9 @@ module regfile(
 	output reg [15:0] rdDataA,
 	input readB,
 	input [4:0] rdAddrB,
-	output reg [15:0] rdDataB
+	output reg [15:0] rdDataB,
+	input wshift,
+	input reg [15:0] shData
 	);
 
 	//regfile renamed to file, as it clashed with module name
@@ -33,6 +35,10 @@ module regfile(
 
 	always @(posedge clk) begin
 		if (write) file[wrAddr] <= wrData;
+	end
+
+	always @(posedge clk) begin
+		if (wshift) file[wrAddr] <= shData;
 	end
 
 endmodule
