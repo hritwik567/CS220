@@ -1,3 +1,22 @@
+/*
+opcode cnt-> 0           1 2     3 4    5 6   7 8  9 10
+000          <opcode> || <w add><   val    >
+001          <opcode> || <r add>
+010          <opcode> || <r add><r add>
+011          <opcode> || <r add><w add><   val   >
+100          <opcode> || <r add><r add><w add><   val   >
+101          <opcode> || <r add><r add><w add>
+110          <opcode> || <r add><r add><w add>
+111          <opcode> || <r add><s><w add>
+*/
+/*
+display modes mode
+0 enter opcode
+1	ADD\nVal (write)
+2 ADD\nVal (read)
+3 Val\nVal (read/read)
+4 <------>
+*/
 module(
 	input [3:0] in,
 	input clk,
@@ -15,6 +34,9 @@ module(
 	reg readA, readB, write;
 	reg [4:0] wrAddr, rdAddrA, rdAddrB;
 	reg [15:0] wrData, rdDataA, rdDataB;
+
+	//lcd
+	reg [2:0]mode;
 
 	always@(posedge clk) begin
 
