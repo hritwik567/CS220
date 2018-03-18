@@ -22,13 +22,19 @@ display modes mode
 //			adder/subtracter  @always (rdDataA+/-rdDataB)->result
 //			shifter           @always (rdDataA<<shift)->shOut
 `include "add_sub.v"
+`include "top.v"
 
 module controller(
 	input [3:0] in,
 	input clk,
 	input push_b,//pushbutton
 	input rot_a,
-	input rot_b);
+	input rot_b,
+        output wire LCD_RS,
+	output wire LCD_E,
+	output wire LCD_W,
+	output wire [3:0]lcd_data
+);
 
 	reg rot_e, prev;
 	reg [2:0] op;
@@ -38,7 +44,7 @@ module controller(
 	reg [15:0] shOut;
 
 	reg func=0;//add or subtract (rdDataA+rdDataB)
-	reg [15:0] result;//adder/subtractor result
+	wire [15:0] result;//adder/subtractor result
 
 	reg readA=0, readB=0, write=0;
 	reg [4:0] wrAddr, rdAddrA, rdAddrB;
@@ -49,6 +55,8 @@ module controller(
 
 	//lcd
 	reg [2:0]mode=3'b0;
+        top disp(clk,mode,wrAddr,wrData,rdAddrA,rdDataA,rdAddrB,rdDataB,LCD_RS,LCD_E,LCD_W,lcd_data);
+
 
 	always@(posedge clk) begin
 		//encoder
@@ -61,7 +69,7 @@ module controller(
 		//functions
 		if(push_b) begin
 			cnt<=1;
-			opcode<=3'b0;
+			op<=3'b0;
 			shift<=4'b0;mode<=3'b0;func<=0;
 			readA<=0;readB<=0;write<=0;
 		end
@@ -77,7 +85,7 @@ module controller(
 			else if(cnt==1) begin
 				//reset
 				cnt<=1;
-				opcode<=3'b0;
+				op<=3'b0;
 				shift<=0;mode<=0;func<=0;
 				readA<=0;readB<=0;write<=0;
 				//input

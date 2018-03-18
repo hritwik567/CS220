@@ -4,7 +4,7 @@ module add_sub(
 	input [15:0] d_1,
 	input [15:0] d_2,
 	input sign,
-	output reg [15:0] out
+	output wire [15:0] out
 	);
 
 	wire [15:0] c;
