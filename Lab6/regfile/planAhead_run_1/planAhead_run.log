@@ -58,3 +58,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Phase 0 | Netlist Checksum: 14a80d3e
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+open_rtl_design: Time (s): cpu = 00:01:17 ; elapsed = 00:00:38 . Memory (MB): peak = 2784.570 ; gain = 127.652
+INFO: [Common 17-344] 'open_rtl_design' was cancelled
+INFO: [Common 17-344] 'source' was cancelled
+update_compile_order -fileset sim_1
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Mon Mar 19 14:28:22 2018...
+INFO: [Common 17-83] Releasing license: PlanAhead

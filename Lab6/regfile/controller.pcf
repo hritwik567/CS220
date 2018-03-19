@@ -1,0 +1,25 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Mar 19 14:49:12 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "C9" LEVEL 1;
+COMP "lcd_data<0>" LOCATE = SITE "R15" LEVEL 1;
+COMP "lcd_data<1>" LOCATE = SITE "R16" LEVEL 1;
+COMP "lcd_data<2>" LOCATE = SITE "P17" LEVEL 1;
+COMP "lcd_data<3>" LOCATE = SITE "M15" LEVEL 1;
+COMP "LCD_E" LOCATE = SITE "M18" LEVEL 1;
+COMP "LCD_W" LOCATE = SITE "L17" LEVEL 1;
+COMP "in<0>" LOCATE = SITE "L13" LEVEL 1;
+COMP "in<1>" LOCATE = SITE "L14" LEVEL 1;
+COMP "in<2>" LOCATE = SITE "H18" LEVEL 1;
+COMP "in<3>" LOCATE = SITE "N17" LEVEL 1;
+COMP "rot_a" LOCATE = SITE "K18" LEVEL 1;
+COMP "rot_b" LOCATE = SITE "G18" LEVEL 1;
+COMP "LCD_RS" LOCATE = SITE "L18" LEVEL 1;
+COMP "push_b" LOCATE = SITE "K17" LEVEL 1;
+PIN push_b_pin<0> = BEL "push_b" PINNAME PAD;
+PIN "push_b_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+

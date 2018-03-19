@@ -88,8 +88,8 @@ module controller(
 		if(push_b) begin
 			cnt<=1;
 			op<=3'b0;
-			shift<=4'b0;mode<=3'b0;func<=0;
-			readA<=0;readB<=0;write<=0;
+			shift<=4'b0;mode=3'b0;func=0;
+			readA=0;readB=0;write=0;
 		end
 
 		//shift
@@ -104,8 +104,12 @@ module controller(
 				//reset
 				cnt<=1;
 				op<=3'b0;
-				shift<=0;mode<=0;func<=0;
-				readA<=0;readB<=0;write<=0;
+				shift<=0;
+				mode=3'b0;
+				func=0;
+				readA=0;
+				readB=0;
+				write=0;
 				//input
 				op <= in[2:0];
 				mode=3'b100;//inform input taken
@@ -153,7 +157,7 @@ module controller(
 					3'b000:wrData[11:8] <= in;
 					3'b001:;
 					3'b010:begin
-									mode<=3'b011;readA<=1;readB<=1;cnt<=0;//done
+									mode=3'b011;readA=1;readB=1;cnt<=0;//done
 								end
 					3'b011:wrData[3:0] <= in;
 					3'b100:wrAddr[3:0] <= in;
@@ -172,7 +176,7 @@ module controller(
 					3'b101:wrAddr[4] <= in[0];
 					3'b110:wrAddr[4] <= in[0];
 					3'b111:begin
-									#32 wrData<=shOut;#5 mode<=3'b001;write=1;cnt<=0;//done
+									#32 wrData<=shOut;#5 mode=3'b001;write=1;cnt<=0;//done
 									end
 				endcase
 			end
@@ -186,10 +190,10 @@ module controller(
 					3'b011:wrData[11:8] <= in;
 					3'b100:wrData[3:0] <= in;
 					3'b101:begin
-										func=0;#32 wrData<=result;#5 write<=1;mode<=3'b001;cnt<=0;//done
+										func=0;#32 wrData<=result;#5 write=1;mode=3'b001;cnt<=0;//done
 									end
 					3'b110:begin
-										func=1;#32 wrData<=result;#5 write<=1;mode<=3'b001;cnt<=0;//done
+										func=1;#32 wrData<=result;#5 write=1;mode=3'b001;cnt<=0;//done
 									end
 					3'b111:;
 				endcase

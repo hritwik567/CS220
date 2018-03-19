@@ -1,0 +1,5 @@
+verilog work "lcd_driver.v"
+verilog work "complement_adder.v"
+verilog work "top.v"
+verilog work "add_sub.v"
+verilog work "controller.v"

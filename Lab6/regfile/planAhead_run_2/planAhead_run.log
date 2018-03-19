@@ -1,11 +1,8 @@
-#-----------------------------------------------------------
-# PlanAhead v14.7 (64-bit)
-# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
-# Start of session at: Mon Mar 19 14:25:49 2018
-# Process ID: 25723
-# Log file: /users/btech/hritvikt/Desktop/CS220/Lab6/regfile/planAhead_run_1/planAhead.log
-# Journal file: /users/btech/hritvikt/Desktop/CS220/Lab6/regfile/planAhead_run_1/planAhead.jou
-#-----------------------------------------------------------
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
 INFO: [Common 17-78] Attempting to get a license: PlanAhead
 INFO: [Common 17-290] Got license for PlanAhead
 INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
@@ -13,8 +10,8 @@ Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx
 Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 start_gui
 source /users/btech/hritvikt/Desktop/CS220/Lab6/regfile/pa.fromHdl.tcl
-# create_project -name regfile -dir "/users/btech/hritvikt/Desktop/CS220/Lab6/regfile/planAhead_run_1" -part xc3s500efg320-4
-create_project: Time (s): cpu = 00:00:31 ; elapsed = 00:00:22 . Memory (MB): peak = 2652.809 ; gain = 40.012
+# create_project -name regfile -dir "/users/btech/hritvikt/Desktop/CS220/Lab6/regfile/planAhead_run_2" -part xc3s500efg320-4
+create_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:20 . Memory (MB): peak = 2640.867 ; gain = 25.266
 # set_param project.pinAheadLayout yes
 # set srcset [get_property srcset [current_run -impl]]
 # set_property target_constrs_file "controller.ucf" [current_fileset -constrset]
@@ -61,18 +58,79 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Phase 0 | Netlist Checksum: 14a80d3e
+open_rtl_design: Time (s): cpu = 00:01:14 ; elapsed = 00:00:36 . Memory (MB): peak = 2779.570 ; gain = 135.699
 INFO: [Common 17-41] Interrupt caught. Command should exit soon.
-open_rtl_design: Time (s): cpu = 00:01:17 ; elapsed = 00:00:38 . Memory (MB): peak = 2784.570 ; gain = 127.652
-INFO: [Common 17-344] 'open_rtl_design' was cancelled
 INFO: [Common 17-344] 'source' was cancelled
 update_compile_order -fileset sim_1
+set_property package_pin "" [get_ports [list  {in[3]}]]
+startgroup
+set_property package_pin L13 [get_ports {in[0]}]
+endgroup
+startgroup
+set_property package_pin L14 [get_ports {in[1]}]
+endgroup
+startgroup
+set_property package_pin H18 [get_ports {in[2]}]
+endgroup
+startgroup
+set_property package_pin N17 [get_ports {in[3]}]
+endgroup
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+set_property is_loc_fixed false [get_ports [list  clk]]
+set_property is_loc_fixed true [get_ports [list  clk]]
+startgroup
+set_property package_pin M18 [get_ports LCD_E]
+endgroup
+startgroup
+set_property package_pin L18 [get_ports LCD_RS]
+endgroup
+startgroup
+set_property package_pin L17 [get_ports LCD_W]
+endgroup
+set_property package_pin "" [get_ports [list  push_b]]
+startgroup
+set_property package_pin R15 [get_ports {lcd_data[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {lcd_data[2]}]]
+startgroup
+set_property package_pin R16 [get_ports {lcd_data[1]}]
+endgroup
+startgroup
+set_property package_pin P17 [get_ports {lcd_data[2]}]
+endgroup
+startgroup
+set_property package_pin M15 [get_ports {lcd_data[3]}]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list {lcd_data[3]} {lcd_data[2]} {lcd_data[1]} {lcd_data[0]}]]
+set_property drive 4 [get_ports [list {lcd_data[3]} {lcd_data[2]} {lcd_data[1]} {lcd_data[0]}]]
+set_property drive 4 [get_ports [list LCD_E]]
+set_property drive 4 [get_ports [list LCD_RS]]
+set_property drive 4 [get_ports [list LCD_W]]
+set_property iostandard LVCMOS33 [get_ports [list LCD_E]]
+set_property iostandard LVCMOS33 [get_ports [list LCD_RS]]
+set_property iostandard LVCMOS33 [get_ports [list LCD_W]]
+startgroup
+set_property package_pin K17 [get_ports push_b]
+endgroup
+set_property package_pin "" [get_ports [list  rot_a]]
+set_property pulltype PULLDOWN [get_ports [list push_b]]
+set_property iostandard LVTTL [get_ports [list push_b]]
+set_property pulltype PULLUP [get_ports [list rot_a]]
+set_property pulltype PULLUP [get_ports [list rot_b]]
+set_property iostandard LVTTL [get_ports [list rot_a]]
+set_property iostandard LVTTL [get_ports [list rot_b]]
+startgroup
+set_property package_pin K18 [get_ports rot_a]
+endgroup
+startgroup
+set_property package_pin G18 [get_ports rot_b]
+endgroup
+set_property is_loc_fixed false [get_ports [list  rot_b]]
+set_property is_loc_fixed true [get_ports [list  rot_b]]
+save_constraints
 exit
-ERROR: [#UNDEF] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
-HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
-HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
-HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
-HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
- (See /users/btech/hritvikt/Desktop/CS220/Lab6/regfile/planAhead_pid25723.debug)
 ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
-INFO: [Common 17-206] Exiting PlanAhead at Mon Mar 19 14:28:22 2018...
+INFO: [Common 17-206] Exiting PlanAhead at Mon Mar 19 14:39:03 2018...
 INFO: [Common 17-83] Releasing license: PlanAhead

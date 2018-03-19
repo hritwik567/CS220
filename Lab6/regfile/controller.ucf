@@ -1,0 +1,51 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "in[0]" LOC = L13;
+NET "in[1]" LOC = L14;
+NET "in[2]" LOC = H18;
+NET "in[3]" LOC = N17;
+NET "clk" LOC = C9;
+NET "LCD_E" LOC = M18;
+NET "LCD_RS" LOC = L18;
+NET "LCD_W" LOC = L17;
+NET "lcd_data[0]" LOC = R15;
+NET "lcd_data[1]" LOC = R16;
+NET "lcd_data[2]" LOC = P17;
+NET "lcd_data[3]" LOC = M15;
+
+# PlanAhead Generated IO constraints 
+
+NET "lcd_data[3]" IOSTANDARD = LVCMOS33;
+NET "lcd_data[2]" IOSTANDARD = LVCMOS33;
+NET "lcd_data[1]" IOSTANDARD = LVCMOS33;
+NET "lcd_data[0]" IOSTANDARD = LVCMOS33;
+NET "lcd_data[3]" DRIVE = 4;
+NET "lcd_data[2]" DRIVE = 4;
+NET "lcd_data[1]" DRIVE = 4;
+NET "lcd_data[0]" DRIVE = 4;
+NET "LCD_E" DRIVE = 4;
+NET "LCD_RS" DRIVE = 4;
+NET "LCD_W" DRIVE = 4;
+NET "LCD_E" IOSTANDARD = LVCMOS33;
+NET "LCD_RS" IOSTANDARD = LVCMOS33;
+NET "LCD_W" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "push_b" LOC = K17;
+
+# PlanAhead Generated IO constraints 
+
+NET "push_b" PULLDOWN;
+NET "push_b" IOSTANDARD = LVTTL;
+NET "push_b" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "rot_a" PULLUP;
+NET "rot_b" PULLUP;
+NET "rot_a" IOSTANDARD = LVTTL;
+NET "rot_b" IOSTANDARD = LVTTL;
+
+# PlanAhead Generated physical constraints 
+
+NET "rot_a" LOC = K18;
+NET "rot_b" LOC = G18;

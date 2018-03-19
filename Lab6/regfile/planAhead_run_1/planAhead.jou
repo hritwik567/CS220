@@ -8,3 +8,4 @@
 #-----------------------------------------------------------
 start_gui
 source /users/btech/hritvikt/Desktop/CS220/Lab6/regfile/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
