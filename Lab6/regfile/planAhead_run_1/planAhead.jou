@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon Mar 19 14:25:49 2018
+# Process ID: 25723
+# Log file: /users/btech/hritvikt/Desktop/CS220/Lab6/regfile/planAhead_run_1/planAhead.log
+# Journal file: /users/btech/hritvikt/Desktop/CS220/Lab6/regfile/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /users/btech/hritvikt/Desktop/CS220/Lab6/regfile/pa.fromHdl.tcl
