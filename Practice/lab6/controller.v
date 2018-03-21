@@ -55,8 +55,7 @@ module controller(
 
 	//lcd
 	reg [2:0]mode=3'b0;
-        top disp(clk,mode,wrAddr,wrData,rdAddrA,rdDataA,rdAddrB,rdDataB,LCD_RS,LCD_E,LCD_W,lcd_data);
-
+  top disp(clk,mode,wrAddr,wrData,rdAddrA,rdDataA,rdAddrB,rdDataB,LCD_RS,LCD_E,LCD_W,lcd_data);
 
 	always@(posedge clk) begin
 		//encoder

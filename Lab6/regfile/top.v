@@ -25,7 +25,6 @@ module top(
 	input [15:0] wd,
 	input [4:0] raA,
 	input [15:0] rdA,
-	input [4:0] raB,
 	input [15:0] rdB,
 	output wire LCD_RS,
 	output wire LCD_E,
@@ -33,27 +32,32 @@ module top(
 	output wire [3:0] data
       );
 
-  reg [127:0] LINE1={16{8'h20}};
-  reg [127:0] LINE2={16{8'h20}};
+  reg [127:0] LINE1;
+  reg [127:0] LINE2;
+  
+   initial begin
+      LINE1 <= "123             ";
+      LINE2 <=  "                ";
+    end
 
   always @(posedge clk) begin
     if(mode==3'b000) begin
-      LINE1 <= {16{8'h20}};
-      LINE2 <= {16{8'h20}};
+      LINE1 <= "                ";
+      LINE2 <=  "                ";
     end
     else if(mode==3'b001) begin
-      LINE1 <= {{5{8'h20}},7'h18,wa[4],7'h18,wa[3],7'h18,wa[2],7'h18,wa[1],7'h18,wa[0],{6{8'h20}}};
-      LINE2 <= {7'h18,wd[15],7'h18,wd[14],7'h18,wd[13],7'h18,wd[12],7'h18,wd[11],7'h18,wd[10],7'h18,wd[9],7'h18,wd[8],7'h18,wd[7],7'h18,wd[6],7'h18,wd[5],7'h18,wd[4],7'h18,wd[3],7'h18,wd[2],7'h18,wd[1],7'h18,wd[0]};
-    end
+      LINE1 <= {"0"+wa[0],"0"+wa[1],"0"+wa[2],"0"+wa[3],"0"+wa[4], "           "};
+      LINE2 <= {"0"+wd[0],"0"+wd[1],"0"+wd[2],"0"+wd[3],"0"+wd[4],"0"+wd[5],"0"+wd[6],"0"+wd[7],"0"+wd[8],"0"+wd[9],"0"+wd[10],"0"+wd[11],"0"+wd[12],"0"+wd[13],"0"+wd[14],"0"+wd[15]};
+	 end
     else if(mode==3'b010) begin
-      LINE1 <= {{5{8'h20}},7'h18,raA[4],7'h18,raA[3],7'h18,raA[2],7'h18,raA[1],7'h18,raA[0],{6{8'h20}}};
-      LINE2 <= {7'h18,rdA[15],7'h18,rdA[14],7'h18,rdA[13],7'h18,rdA[12],7'h18,rdA[11],7'h18,rdA[10],7'h18,rdA[9],7'h18,rdA[8],7'h18,rdA[7],7'h18,rdA[6],7'h18,rdA[5],7'h18,rdA[4],7'h18,rdA[3],7'h18,rdA[2],7'h18,rdA[1],7'h18,rdA[0]};
-    end
+      LINE1 <= {"0"+raA[0],"0"+raA[1],"0"+raA[2],"0"+raA[3],"0"+raA[4], "           "};
+      LINE2 <= {"0"+rdA[0],"0"+rdA[1],"0"+rdA[2],"0"+rdA[3],"0"+rdA[4],"0"+rdA[5],"0"+rdA[6],"0"+rdA[7],"0"+rdA[8],"0"+rdA[9],"0"+rdA[10],"0"+rdA[11],"0"+rdA[12],"0"+rdA[13],"0"+rdA[14],"0"+rdA[15]};
+	 end
     else if(mode==3'b011) begin
-      LINE1 <= {7'h18,rdA[15],7'h18,rdA[14],7'h18,rdA[13],7'h18,rdA[12],7'h18,rdA[11],7'h18,rdA[10],7'h18,rdA[9],7'h18,rdA[8],7'h18,rdA[7],7'h18,rdA[6],7'h18,rdA[5],7'h18,rdA[4],7'h18,rdA[3],7'h18,rdA[2],7'h18,rdA[1],7'h18,rdA[0]};
-      LINE2 <= {7'h18,rdB[15],7'h18,rdB[14],7'h18,rdB[13],7'h18,rdB[12],7'h18,rdB[11],7'h18,rdB[10],7'h18,rdB[9],7'h18,rdB[8],7'h18,rdB[7],7'h18,rdB[6],7'h18,rdB[5],7'h18,rdB[4],7'h18,rdB[3],7'h18,rdB[2],7'h18,rdB[1],7'h18,rdB[0]};
+      LINE1 <= {"0"+rdA[0],"0"+rdA[1],"0"+rdA[2],"0"+rdA[3],"0"+rdA[4],"0"+rdA[5],"0"+rdA[6],"0"+rdA[7],"0"+rdA[8],"0"+rdA[9],"0"+rdA[10],"0"+rdA[11],"0"+rdA[12],"0"+rdA[13],"0"+rdA[14],"0"+rdA[15]};
+	 LINE2 <= {"0"+rdB[0],"0"+rdB[1],"0"+rdB[2],"0"+rdB[3],"0"+rdB[4],"0"+rdB[5],"0"+rdB[6],"0"+rdB[7],"0"+rdB[8],"0"+rdB[9],"0"+rdB[10],"0"+rdB[11],"0"+rdB[12],"0"+rdB[13],"0"+rdB[14],"0"+rdB[15]};
     end
   end
 
-  lcd_driver uut(LINE1,LINE2,clk,LCD_RS,LCD_W,LCD_E,data);
+  lcd_welcome uut(LINE1,LINE2,clk,LCD_RS,LCD_W,LCD_E,data[0],data[1],data[2],data[3]);
 endmodule

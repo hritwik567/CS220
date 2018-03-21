@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-03-19T14:22:17</DateModified>
+  <DateModified>2018-03-19T15:31:51</DateModified>
   <ModuleName>controller</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2018-03-19T15:31:06</SummaryTimeStamp>
   <SavedFilePath>/users/btech/hritvikt/Desktop/CS220/Lab6/regfile/iseconfig/complement_adder.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/users/btech/hritvikt/Desktop/CS220/Lab6/regfile</ImplementationReportsDirectory>
   <DateInitialized>2018-03-19T14:22:15</DateInitialized>

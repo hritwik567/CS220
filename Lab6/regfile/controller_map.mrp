@@ -9,23 +9,23 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Mon Mar 19 14:49:04 2018
+Mapped Date    : Mon Mar 19 17:08:45 2018
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:           140 out of   9,312    1%
-  Number of 4 input LUTs:               498 out of   9,312    5%
+  Number of Slice Flip Flops:           730 out of   9,312    7%
+  Number of 4 input LUTs:             1,255 out of   9,312   13%
 Logic Distribution:
-  Number of occupied Slices:            286 out of   4,656    6%
-    Number of Slices containing only related logic:     286 out of     286 100%
-    Number of Slices containing unrelated logic:          0 out of     286   0%
+  Number of occupied Slices:          1,034 out of   4,656   22%
+    Number of Slices containing only related logic:   1,034 out of   1,034 100%
+    Number of Slices containing unrelated logic:          0 out of   1,034   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         537 out of   9,312    5%
-    Number used as logic:               498
-    Number used as a route-thru:         39
+  Total Number of 4 input LUTs:       1,314 out of   9,312   14%
+    Number used as logic:             1,255
+    Number used as a route-thru:         59
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
@@ -33,11 +33,11 @@ Logic Distribution:
   Number of bonded IOBs:                 15 out of     232    6%
   Number of BUFGMUXs:                     1 out of      24    4%
 
-Average Fanout of Non-Clock Nets:                3.69
+Average Fanout of Non-Clock Nets:                3.44
 
-Peak Memory Usage:  618 MB
-Total REAL time to MAP completion:  10 secs 
-Total CPU time to MAP completion:   10 secs 
+Peak Memory Usage:  625 MB
+Total REAL time to MAP completion:  20 secs 
+Total CPU time to MAP completion:   19 secs 
 
 NOTES:
 
@@ -88,10 +88,22 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 
 Section 4 - Removed Logic Summary
 ---------------------------------
+   2 block(s) removed
    2 block(s) optimized away
+   2 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "disp/uut/Mmux__COND_9_11_f5_3_rt1" is unused and has been removed.
+ Unused block "disp/uut/Mmux__COND_9_11_f5_3_rt1" (ROM) removed.
+The signal "disp/uut/Mmux__COND_9_11_f5_4_rt1" is unused and has been removed.
+ Unused block "disp/uut/Mmux__COND_9_11_f5_4_rt1" (ROM) removed.
 
 Optimized Block(s):
 TYPE 		BLOCK

@@ -35,8 +35,4 @@ module regfile(
 		if (write) file[wrAddr] <= wrData;
 	end
 
-	always @(posedge clk) begin
-		if (wshift) file[wrAddr] <= shData;
-	end
-
 endmodule

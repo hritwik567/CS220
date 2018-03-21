@@ -1,5 +1,7 @@
-MO lcd_driver NULL lcd_driver.v vlg46/lcd__driver.bin 1521450973
-MO top NULL top.v vlg6F/top.bin 1521450973
-MO complement_adder NULL complement_adder.v vlg17/complement__adder.bin 1521450973
-MO controller NULL controller.v vlg54/controller.bin 1521450974
-MO add_sub NULL add_sub.v vlg0A/add__sub.bin 1521450973
+MO lcd_driver NULL lcd_driver.v vlg46/lcd__driver.bin 1521458302
+MO regfile NULL regfile.v vlg72/regfile.bin 1521459334
+MO top NULL top.v vlg6F/top.bin 1521459334
+MO complement_adder NULL complement_adder.v vlg17/complement__adder.bin 1521459334
+MO lcd_welcome NULL lcd_driver.v vlg2A/lcd__welcome.bin 1521459334
+MO controller NULL controller.v vlg54/controller.bin 1521459335
+MO add_sub NULL add_sub.v vlg0A/add__sub.bin 1521459335

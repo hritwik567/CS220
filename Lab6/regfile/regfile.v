@@ -23,12 +23,10 @@ module regfile(
 	input write,
 	input [4:0] wrAddr,
 	input [15:0] wrData,
-	input readA,
 	input [4:0] rdAddrA,
-	output reg [15:0] rdDataA,
-	input readB,
+	output wire [15:0] rdDataA,
 	input [4:0] rdAddrB,
-	output reg [15:0] rdDataB
+	output wire [15:0] rdDataB
 	);
 
 	//regfile renamed to file, as it clashed with module name
@@ -43,20 +41,14 @@ module regfile(
 		file[30]=16'b0;file[31]=16'b0;
 	end
 
-	always @(posedge clk) begin
-		if(readA) rdDataA <= file[rdAddrA];
-	end
+	assign rdDataA = file[rdAddrA];
+	assign rdDataB = file[rdAddrB];
+
 
 	always @(posedge clk) begin
-		if(readB) rdDataB <= file[rdAddrB];
-	end
-
-	always @(posedge clk) begin
-		if (write) file[wrAddr] <= wrData;
-	end
-
-	always @(posedge clk) begin
-		if (wshift) file[wrAddr] <= shData;
+		if (write) begin 
+		file[wrAddr] <= wrData;
+		end
 	end
 
 endmodule
