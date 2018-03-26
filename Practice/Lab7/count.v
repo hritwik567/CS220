@@ -91,25 +91,34 @@ module controller(
 
         //work on data
         if(data[31:26]==6'b000000) begin
-          r++;
+          r<=r+1;
           if(data[15:11]==5'b00011)begin
-            c3++;
+            c3<=c3+1;
           end
           else if(data[15:11]==5'b00100) begin
-            c4++;
+            c4<=c4+1;
           end
           else if(data[15:11]==5'b00101) begin
-            c5++;
+            c5<=;
           end
         end
         else if(data[31:26]==6'b000010)begin
-          j++;
+          j<=j+1;
         end
         else if(data[31:26]==6'b000011)begin
-          j++;
+          j<=j+1;
         end
         else begin
-          i++;
+          i<=i+1;
+          if(data[15:11]==5'b00011)begin
+            c3<=c3+1;
+          end
+          else if(data[15:11]==5'b00100) begin
+            c4<=c4+1;
+          end
+          else if(data[15:11]==5'b00101) begin
+            c5<=;
+          end
         end
 
         if(data[31:26]==6'b000000) begin
