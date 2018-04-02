@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-03-26T14:46:32</DateModified>
+  <DateModified>2018-03-26T16:12:18</DateModified>
   <ModuleName>main</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2018-03-26T16:10:50</SummaryTimeStamp>
   <SavedFilePath>/users/btech/anay/Desktop/CS220/Lab7/mips_isa/iseconfig/main.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/users/btech/anay/Desktop/CS220/Lab7/mips_isa</ImplementationReportsDirectory>
-  <DateInitialized>2018-03-26T14:46:05</DateInitialized>
+  <DateInitialized>2018-03-26T15:16:43</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

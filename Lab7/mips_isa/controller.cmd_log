@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "/users/btech/anay/Desktop/CS220/Lab7/mips_isa/controller.xst" -ofn "/users/btech/anay/Desktop/CS220/Lab7/mips_isa/controller.syr" 
+xst -intstyle ise -ifn "/users/btech/anay/Desktop/CS220/Lab7/mips_isa/controller.xst" -ofn "/users/btech/anay/Desktop/CS220/Lab7/mips_isa/controller.syr" 
+xst -intstyle ise -ifn "/users/btech/anay/Desktop/CS220/Lab7/mips_isa/controller.xst" -ofn "/users/btech/anay/Desktop/CS220/Lab7/mips_isa/controller.syr" 
+xst -intstyle ise -ifn "/users/btech/anay/Desktop/CS220/Lab7/mips_isa/controller.xst" -ofn "/users/btech/anay/Desktop/CS220/Lab7/mips_isa/controller.syr" 

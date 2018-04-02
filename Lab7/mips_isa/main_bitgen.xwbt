@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/users/btech/anay/Desktop/CS220/Lab7/mips_isa/main.ncd
+OUTFILE=/users/btech/anay/Desktop/CS220/Lab7/mips_isa/main.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/users/btech/anay/Desktop/CS220/Lab7/mips_isa
+LICENSE=WebPack
+USER_INFO=211450758_0_0_676
