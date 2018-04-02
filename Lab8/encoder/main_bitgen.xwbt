@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/users/btech/anay/Desktop/CS220/Lab8/encoder/main.ncd
+OUTFILE=/users/btech/anay/Desktop/CS220/Lab8/encoder/main.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/users/btech/anay/Desktop/CS220/Lab8/encoder
+LICENSE=WebPack
+USER_INFO=211450758_0_0_676

@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/users/btech/anay/Desktop/CS220/Lab8/encoder/impact.xsl
+OUTFILE=/users/btech/anay/Desktop/CS220/Lab8/encoder/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/users/btech/anay/Desktop/CS220/Lab8/encoder
+LICENSE=iMPACT
+USER_INFO=iMPACT
