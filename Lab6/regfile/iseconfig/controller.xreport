@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-03-19T15:59:51</DateModified>
+  <DateModified>2018-03-26T14:42:23</DateModified>
   <ModuleName>controller</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/users/btech/hritvikt/Desktop/CS220/Lab6/regfile/iseconfig/controller.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/users/btech/hritvikt/Desktop/CS220/Lab6/regfile/</ImplementationReportsDirectory>
+  <SavedFilePath>/users/btech/anay/Desktop/CS220/Lab6/regfile/iseconfig/controller.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/users/btech/anay/Desktop/CS220/Lab6/regfile/</ImplementationReportsDirectory>
   <DateInitialized>2018-03-19T15:21:36</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
