@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/users/btech/anay/Desktop/CS220/Lab9/spim/impact.xsl
+OUTFILE=/users/btech/anay/Desktop/CS220/Lab9/spim/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/users/btech/anay/Desktop/CS220/Lab9/spim
+LICENSE=iMPACT
+USER_INFO=iMPACT

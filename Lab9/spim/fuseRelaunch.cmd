@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/users/btech/anay/Desktop/CS220/Lab9/spim/test_isim_beh.exe" -prj "/users/btech/anay/Desktop/CS220/Lab9/spim/test_beh.prj" "work.test" "work.glbl" 

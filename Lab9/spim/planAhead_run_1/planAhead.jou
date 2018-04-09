@@ -1,0 +1,39 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon Apr  9 15:08:09 2018
+# Process ID: 22969
+# Log file: /users/btech/anay/Desktop/CS220/Lab9/spim/planAhead_run_1/planAhead.log
+# Journal file: /users/btech/anay/Desktop/CS220/Lab9/spim/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /users/btech/anay/Desktop/CS220/Lab9/spim/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+startgroup
+set_property package_pin F9 [get_ports {led[7]}]
+endgroup
+startgroup
+set_property package_pin E9 [get_ports {led[6]}]
+endgroup
+startgroup
+set_property package_pin D11 [get_ports {led[5]}]
+endgroup
+startgroup
+set_property package_pin C11 [get_ports {led[4]}]
+endgroup
+startgroup
+set_property package_pin F11 [get_ports {led[3]}]
+endgroup
+startgroup
+set_property package_pin E11 [get_ports {led[2]}]
+endgroup
+startgroup
+set_property package_pin E12 [get_ports {led[1]}]
+endgroup
+startgroup
+set_property package_pin F12 [get_ports {led[0]}]
+endgroup
+save_constraints

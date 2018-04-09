@@ -1,0 +1,535 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> 
+Reading design: main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "main"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "main.v" in library work
+Module <main> compiled
+No errors in compilation
+Analysis of file <"main.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <main> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <main>.
+INFO:Xst:1433 - Contents of array <mem> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <mem> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Module <main> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <main>.
+    Related source file is "main.v".
+WARNING:Xst:646 - Signal <res> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <op> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <mem> is used but never assigned. Tied to default value.
+WARNING:Xst:646 - Signal <cur<10:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 32x9-bit dual-port RAM <Mram_regfile> for signal <regfile>.
+    Found 32x9-bit dual-port RAM <Mram_regfile_ren> for signal <regfile>.
+    Found finite state machine <FSM_0> for signal <cnt>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 9                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Power Up State     | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 11x32-bit ROM for signal <$varindex0000> created at line 76.
+    Found 8-bit register for signal <led>.
+    Found 32-bit register for signal <cur>.
+    Found 5-bit register for signal <da>.
+    Found 8-bit register for signal <im>.
+    Found 1-bit register for signal <inval>.
+    Found 4-bit register for signal <pc>.
+    Found 8-bit adder carry out for signal <pc$addsub0000> created at line 119.
+    Found 8-bit comparator equal for signal <pc$cmp_eq0000> created at line 119.
+    Found 8-bit comparator not equal for signal <pc$cmp_ne0000> created at line 122.
+    Found 4-bit addsub for signal <pc$share0000>.
+    Found 8-bit 3-to-1 multiplexer for signal <regfile$varindex0000> created at line 144.
+    Found 8-bit register for signal <s1>.
+    Found 8-bit register for signal <s2>.
+    Found 5-bit register for signal <sa1>.
+    Found 5-bit register for signal <sa2>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   2 RAM(s).
+	inferred   1 ROM(s).
+	inferred  84 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+	inferred   8 Multiplexer(s).
+Unit <main> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 32x9-bit dual-port RAM                                : 2
+# ROMs                                                 : 1
+ 11x32-bit ROM                                         : 1
+# Adders/Subtractors                                   : 3
+ 4-bit addsub                                          : 1
+ 8-bit adder                                           : 1
+ 8-bit adder carry out                                 : 1
+# Registers                                            : 10
+ 1-bit register                                        : 1
+ 32-bit register                                       : 1
+ 4-bit register                                        : 1
+ 5-bit register                                        : 3
+ 8-bit register                                        : 4
+# Comparators                                          : 2
+ 8-bit comparator equal                                : 1
+ 8-bit comparator not equal                            : 1
+# Multiplexers                                         : 1
+ 8-bit 3-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <cnt/FSM> on signal <cnt[1:7]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000001
+ 0001  | 0000010
+ 0010  | 0000100
+ 0011  | 0001000
+ 0100  | 0010000
+ 0101  | 0100000
+ 0110  | 1000000
+-------------------
+WARNING:Xst:1426 - The value init of the FF/Latch FFd7 hinder the constant cleaning in the block FSM.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:2677 - Node <cur_8> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <cur_9> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <cur_10> of sequential type is unconnected in block <main>.
+
+Synthesizing (advanced) Unit <main>.
+INFO:Xst:3231 - The small RAM <Mram_regfile_ren> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 9-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_1>    | high     |
+    |     addrA          | connected to signal <da>            |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 9-bit                     |          |
+    |     addrB          | connected to signal <sa2>           |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_regfile> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 9-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_0>    | high     |
+    |     addrA          | connected to signal <da>            |          |
+    |     diA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 9-bit                     |          |
+    |     addrB          | connected to signal <sa1>           |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom__varindex0000> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <main> synthesized (advanced).
+WARNING:Xst:2677 - Node <cur_8> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <cur_9> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <cur_10> of sequential type is unconnected in block <main>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# RAMs                                                 : 2
+ 32x9-bit dual-port distributed RAM                    : 2
+# ROMs                                                 : 1
+ 11x32-bit ROM                                         : 1
+# Adders/Subtractors                                   : 3
+ 2-bit adder                                           : 1
+ 4-bit addsub                                          : 1
+ 8-bit adder carry out                                 : 1
+# Registers                                            : 81
+ Flip-Flops                                            : 81
+# Comparators                                          : 2
+ 8-bit comparator equal                                : 1
+ 8-bit comparator not equal                            : 1
+# Multiplexers                                         : 1
+ 8-bit 3-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch FSM_FFd7 hinder the constant cleaning in the block FSM_0-parent.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1293 - FF/Latch <cur_19> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cur_20> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cur_24> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cur_25> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cur_30> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sa1_3> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sa1_4> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sa2_3> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sa2_4> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <Mram_regfile17> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <Mram_regfile18> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <Mram_regfile_ren17> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <Mram_regfile_ren18> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <cur_4> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <cur_5> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <cur_6> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <cur_7> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <im_4> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <im_5> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <im_6> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <im_7> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <Mram_regfile2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <Mram_regfile4> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <Mram_regfile6> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <Mram_regfile8> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <Mram_regfile10> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <Mram_regfile14> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <Mram_regfile12> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <Mram_regfile16> of sequential type is unconnected in block <main>.
+INFO:Xst:2261 - The FF/Latch <cur_14> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <cur_15> 
+INFO:Xst:2261 - The FF/Latch <cur_2> in Unit <main> is equivalent to the following 2 FFs/Latches, which will be removed : <cur_22> <cur_28> 
+INFO:Xst:2261 - The FF/Latch <cur_27> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <cur_31> 
+
+Optimizing unit <main> ...
+INFO:Xst:2261 - The FF/Latch <da_3> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <da_4> 
+INFO:Xst:2261 - The FF/Latch <da_3> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <da_4> 
+INFO:Xst:2261 - The FF/Latch <da_3> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <da_4> 
+INFO:Xst:2261 - The FF/Latch <da_3> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <da_4> 
+INFO:Xst:2399 - RAMs <Mram_regfile1>, <Mram_regfile9> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <Mram_regfile5>, <Mram_regfile11> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <Mram_regfile5>, <Mram_regfile13> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <Mram_regfile5>, <Mram_regfile15> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <Mram_regfile_ren1>, <Mram_regfile_ren9> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <Mram_regfile_ren2>, <Mram_regfile_ren10> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <Mram_regfile_ren5>, <Mram_regfile_ren13> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <Mram_regfile_ren5>, <Mram_regfile_ren11> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <Mram_regfile_ren5>, <Mram_regfile_ren15> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <Mram_regfile_ren6>, <Mram_regfile_ren12> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <Mram_regfile_ren6>, <Mram_regfile_ren14> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <Mram_regfile_ren6>, <Mram_regfile_ren16> are equivalent, second RAM is removed
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <s1_2> in Unit <main> is equivalent to the following 3 FFs/Latches, which will be removed : <s1_5> <s1_6> <s1_7> 
+INFO:Xst:2261 - The FF/Latch <s2_0> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <s2_4> 
+INFO:Xst:2261 - The FF/Latch <s2_2> in Unit <main> is equivalent to the following 3 FFs/Latches, which will be removed : <s2_5> <s2_6> <s2_7> 
+INFO:Xst:2261 - The FF/Latch <s1_0> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <s1_4> 
+INFO:Xst:2261 - The FF/Latch <led_0> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <led_4> 
+INFO:Xst:2261 - The FF/Latch <led_2> in Unit <main> is equivalent to the following 3 FFs/Latches, which will be removed : <led_5> <led_6> <led_7> 
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 1.
+FlipFlop pc_0 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 55
+ Flip-Flops                                            : 55
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : main.ngr
+Top Level Output File Name         : main
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 9
+
+Cell Usage :
+# BELS                             : 77
+#      GND                         : 1
+#      LUT2                        : 11
+#      LUT3                        : 15
+#      LUT3_L                      : 1
+#      LUT4                        : 33
+#      LUT4_D                      : 2
+#      LUT4_L                      : 2
+#      MUXCY                       : 3
+#      MUXF5                       : 5
+#      XORCY                       : 4
+# FlipFlops/Latches                : 55
+#      FD                          : 7
+#      FDE                         : 42
+#      FDS                         : 6
+# RAMS                             : 12
+#      RAM16X1D                    : 12
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 8
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       48  out of   4656     1%  
+ Number of Slice Flip Flops:             55  out of   9312     0%  
+ Number of 4 input LUTs:                 88  out of   9312     0%  
+    Number used as logic:                64
+    Number used as RAMs:                 24
+ Number of IOs:                           9
+ Number of bonded IOBs:                   9  out of    232     3%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 67    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 7.016ns (Maximum Frequency: 142.531MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 4.450ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.016ns (frequency: 142.531MHz)
+  Total number of paths / destination ports: 757 / 207
+-------------------------------------------------------------------------
+Delay:               7.016ns (Levels of Logic = 4)
+  Source:            s1_1 (FF)
+  Destination:       pc_1 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: s1_1 to pc_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              4   0.591   0.622  s1_1 (s1_1)
+     LUT4:I2->O            1   0.704   0.424  pc_cmp_eq00008136_SW0 (N14)
+     LUT4:I3->O            3   0.704   0.531  pc_cmp_eq00008136 (pc_cmp_eq0000)
+     MUXF5:S->O            4   0.739   0.666  pc_mux0000<0>1 (N01)
+     LUT2:I1->O            1   0.704   0.420  pc_mux0000<2>_SW0 (N57)
+     FDS:S                     0.911          pc_2
+    ----------------------------------------
+    Total                      7.016ns (4.353ns logic, 2.663ns route)
+                                       (62.0% logic, 38.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.450ns (Levels of Logic = 1)
+  Source:            led_2 (FF)
+  Destination:       led<7> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: led_2 to led<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              4   0.591   0.587  led_2 (led_2)
+     OBUF:I->O                 3.272          led_2_OBUF (led<2>)
+    ----------------------------------------
+    Total                      4.450ns (3.863ns logic, 0.587ns route)
+                                       (86.8% logic, 13.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 7.54 secs
+ 
+--> 
+
+
+Total memory usage is 527092 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   41 (   0 filtered)
+Number of infos    :   31 (   0 filtered)
+
