@@ -2,40 +2,40 @@
 `define MAX_PC 11
 `define OUTPUT_REG 4
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    15:02:46 04/09/2018 
-// Design Name: 
-// Module Name:    main 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
+// Company:
+// Engineer:
 //
-// Dependencies: 
+// Create Date:    15:02:46 04/09/2018
+// Design Name:
+// Module Name:    main
+// Project Name:
+// Target Devices:
+// Tool versions:
+// Description:
 //
-// Revision: 
+// Dependencies:
+//
+// Revision:
 // Revision 0.01 - File Created
-// Additional Comments: 
+// Additional Comments:
 //
 //////////////////////////////////////////////////////////////////////////////////
 module main(
     input clk,
     output reg [7:0]led,
-	 output cur,
-	 output regf
+	 output reg [31:0] cur,
+   output wire [7:0]regf
 );
     reg [3:0] cnt,pc;
     integer kk;
     reg [7:0] mem [0:2];
     reg [7:0] regfile [0:31];
     reg [31:0] op [0:10];
-	 
-	 wire [7:0]regf;
+
+	 //
 	 assign regf =regfile[4];
 
-    reg [31:0] cur;
+    // reg [31:0] cur;
     //address
     reg [4:0] sa1,sa2,da;
     //values
@@ -118,7 +118,7 @@ module main(
           //if(cur[31:26]==6'h23) begin//lw
           //
 			 //end
-          //else 
+          //else
 			 if(cur[31:26]==6'h09) begin//addiu
             res<=(s1+im);
           end
@@ -138,7 +138,7 @@ module main(
         //accesses data memory if the instruction is lw and reads the row pointed to by the address computed in the last state
         if(cur[31:26]==6'h23) begin//lw
           res<=mem[im+s1];
-			 
+
         end
         //rest do nothing
 
@@ -150,10 +150,10 @@ module main(
         //if destination!=0
         if(da!=5'b00000) begin
           regfile[da]<=res;
-			 
+
         end
 		  led=da;
-		  
+
 		  if(inval==1) begin
 			inval=0;
 		  end
@@ -164,7 +164,7 @@ module main(
 
       sa1=5'b0;sa2=5'b0;da=5'b0;
       s1=8'b0;s2=8'b0;res=8'b0;im=8'b0;d1=8'b0;
-		  
+
 
         if(pc<`MAX_PC) begin
           cnt=0;
